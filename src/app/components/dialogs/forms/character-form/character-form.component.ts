@@ -42,8 +42,6 @@ export class CharacterFormComponent {
     this.getRaces();
   }
 
-  guardar() {}
-
   getLands() {
     this._landService.getLands().subscribe(
       (response) => {
@@ -90,6 +88,7 @@ export class CharacterFormComponent {
   }
 
   onSubmit(form: any) {
+   
     this._characterService.registerCharacter(this.newCharacter).subscribe(
       (response) => {
         console.log(this.newCharacter);

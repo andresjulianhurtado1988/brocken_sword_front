@@ -1,0 +1,57 @@
+<div class="container">
+  <h2 mat-dialog-title>{{ label_text }}</h2>
+  <mat-dialog-content>
+    <cdk-accordion class="example-accordion">
+      <cdk-accordion-item
+        *ngFor="let data of data; let index = index"
+        #accordionItem="cdkAccordionItem"
+        class="example-accordion-item"
+        role="button"
+        tabindex="0"
+        [attr.id]="'accordion-header-' + index"
+        [attr.aria-expanded]="accordionItem.expanded"
+        [attr.aria-controls]="'accordion-body-' + index"
+      >
+        <div
+          class="example-accordion-item-header"
+          (click)="accordionItem.toggle()"
+        >
+          {{ data.character_name }}
+          <span class="example-accordion-item-description">
+            Click to {{ accordionItem.expanded ? "close" : "open" }}
+          </span>
+        </div>
+        <div
+          class="example-accordion-item-body"
+          role="region"
+          [style.display]="accordionItem.expanded ? '' : 'none'"
+          [attr.id]="'accordion-body-' + index"
+          [attr.aria-labelledby]="'accordion-header-' + index"
+        >
+          <div class="card mb-3 card-text-contain">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img [src]="data.images | noImage" class="imagen" />
+              </div>
+              <div class="col-md-8">
+                <cdk-virtual-scroll-viewport
+                  itemSize="50"
+                  class="example-viewport"
+                >
+                  <div class="card-body">
+                    <p class="card-text">
+                      {{ data.story }}
+                    </p>
+                  </div>
+                </cdk-virtual-scroll-viewport>
+              </div>
+            </div>
+          </div>
+        </div>
+      </cdk-accordion-item>
+    </cdk-accordion>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>

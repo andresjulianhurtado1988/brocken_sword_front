@@ -1,0 +1,52 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.imagen-size {
+  width: 900px;
+  height: 220px;
+}
+
+.example-menu {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 180px;
+  max-width: 280px;
+  background-color: rgba(255, 255, 255);
+  padding: 6px 0;
+}
+
+.example-menu-item,
+.example-standalone-trigger {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+
+  user-select: none;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+}

@@ -1,0 +1,49 @@
+<div class="container-align m-5">
+  <mat-tab-group>
+    <mat-tab *ngFor="let order of orders" label="{{ order.order_name }}">
+      <mat-grid-list cols="2" rowHeight="4:1">
+        <div class="inner-container-align m-5">
+          <mat-card class="order-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title>{{ order.order_name }}</mat-card-title>
+                <!-- <mat-card-subtitle>Deity</mat-card-subtitle> -->
+              </mat-card-title-group>
+            </mat-card-header>
+            <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
+              <mat-card-content class="m-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
+                voluptate facilis voluptatum, perspiciatis repellendus
+                voluptates minima hic ratione accusamus illo mollitia tempore
+                nihil tenetur rem voluptatem consequatur odio. Eos, autem? Lorem
+                ipsum dolor sit, amet consectetur adipisicing elit. Praesentium,
+                accusamus? Aliquam veritatis est nam, eveniet quod dignissimos
+                error assumenda eum atque. Repudiandae atque voluptatum id neque
+                ab a ut reprehenderit! Lorem ipsum, dolor sit amet consectetur
+                adipisicing elit. Minima a beatae, culpa exercitationem,
+                molestias distinctio veniam temporibus quibusdam, odio ab ipsum
+                perferendis eaque necessitatibus placeat consectetur non sunt
+                tempora. Magnam. Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Vitae eos obcaecati sint consequuntur, sit
+                recusandae corporis suscipit tenetur veritatis adipisci placeat
+                quos molestias. Ea dolore hic placeat dicta provident nostrum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                rerum tenetur, nihil sunt earum veritatis quod perspiciatis in
+                quia, aut, laborum voluptates enim sequi tempore saepe quos eius
+                minus eos.
+              </mat-card-content>
+            </cdk-virtual-scroll-viewport>
+            <mat-card-actions>
+              <button mat-button (click)="openDialogJudges(order.id)">
+                Judges
+              </button>
+              <button mat-button (click)="openDialogDeity(order.id)">
+                Deity
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </mat-grid-list>
+    </mat-tab>
+  </mat-tab-group>
+</div>

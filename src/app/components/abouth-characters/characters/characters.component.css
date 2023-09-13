@@ -1,0 +1,44 @@
+.imagen {
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 60%;
+  height: 60%;
+}
+
+.card-content-align {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.contenedor {
+  height: 30vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.big-container {
+  height: 20vh;
+}
+
+.img-circle {
+  border-radius: 100%;
+  width: 150px;
+}
+
+.example-viewport {
+  height: 250px;
+  width: 2000px;
+}
+
+.example-item {
+  height: 50px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.tittle-align {
+  float: center;
+}

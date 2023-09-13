@@ -1,0 +1,43 @@
+<div class="grid-container m-5">
+  <div class="card mb-3 card-width" *ngFor="let character of the_character">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          class="img-fluid rounded-start"
+          [src]="character.images | noImage"
+          (click)="openDialogBiography(character.id)"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
+            <div class="row row-cols-5 row-cols-md-5 g-4">
+              <div class="col">
+                <div class="card">
+                  <img class="imagen img-circle" />
+                  <div class="card-body">
+                    <h3 class="card-title">
+                      <strong>{{ character.character_name }}</strong>
+                    </h3>
+                    <p class="card-text">
+                      {{ character.description }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </cdk-virtual-scroll-viewport>
+
+          <div class="card-footer">
+            <button mat-button (click)="openDialogBiography(character.id)">
+              Open dialog BIO
+            </button>
+            <button mat-button (click)="openDialogFormCharacter()">
+              New Character
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

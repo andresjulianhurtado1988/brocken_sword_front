@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <a [routerLink]="['']" class="example-name-app">APP DE PRUEBA</a>
+  <mat-button-toggle-group
+    appearance="legacy"
+    name="fontStyle"
+    aria-label="Font Style"
+  >
+    <mat-button-toggle routerLink="/lands">The Lands</mat-button-toggle>
+    <mat-button-toggle routerLink="/characters">Characters</mat-button-toggle>
+    <mat-button-toggle routerLink="/the-broken-sword">The Broken Sword</mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-toolbar>

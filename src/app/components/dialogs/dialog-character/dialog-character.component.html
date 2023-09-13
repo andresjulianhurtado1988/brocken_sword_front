@@ -1,0 +1,12 @@
+<mat-dialog-content class="mat-typography" *ngFor="let character of biography_character">
+  <h2>
+    <strong>{{ character.character_name }}</strong>
+  </h2>
+  <p>
+    {{ character.story }}
+  </p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

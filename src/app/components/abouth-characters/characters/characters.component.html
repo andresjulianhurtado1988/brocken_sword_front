@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <app-character-detail
+      [the_character]="the_character"
+    ></app-character-detail>
+  </div>
+  <div class="row m-1">
+    <cdk-virtual-scroll-viewport itemSize="5" class="example-viewport">
+      <div class="row row-cols-5 row-cols-md-5 g-4">
+        <div
+          class="col pointer"
+          *ngFor="let character of characters"
+          (click)="showCharacter(character.id)"
+        >
+          <div class="card">
+            <img class="imagen img-circle" [src]="character.imagen | noImage" />
+            <div class="card-body">
+              <p class="text-center">
+                <strong>{{ character.character_name }}</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>

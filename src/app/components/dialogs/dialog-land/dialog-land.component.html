@@ -1,0 +1,12 @@
+<mat-dialog-content class="mat-typography" *ngFor="let land of biography_land">
+  <h2>
+    <strong>{{ land.land_name }}</strong>
+  </h2>
+  <p>
+    {{ land.descripcion }}
+  </p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

@@ -1,0 +1,163 @@
+<div mat-dialog-content>
+  <h4>New Character</h4>
+  <hr />
+
+  <form action="" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label class="col-2 col-form-label">Name:</label>
+        <div class="col">
+          <input
+            name="character_name"
+            class="form-control"
+            #character_name="ngModel"
+            [(ngModel)]="newCharacter.character_name"
+            type="text"
+            placeholder="Name Character"
+          />
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label class="col-2 col-form-label">Land:</label>
+        <div class="col">
+          <select
+            class="form-control"
+            placeholder="Land"
+            name="id_land"
+            #id_land="ngModel"
+            [(ngModel)]="newCharacter.id_land"
+          >
+            <option value="" [disabled]="true">Select a Land...</option>
+            <option *ngFor="let land of lands" value="{{ land.id }}">
+              {{ land.land_name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label class="col-12 col-form-label">Magic System:</label>
+        <div class="col">
+          <select
+            class="form-control"
+            placeholder="Magic System"
+            name="id_magic_system"
+            #id_magic_system="ngModel"
+            [(ngModel)]="newCharacter.id_magic_system"
+          >
+            <option value="" [disabled]="true">Select a Magic System...</option>
+            <option *ngFor="let ms of magic_system" value="{{ ms.id }}">
+              {{ ms.magic_name }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label class="col-2 col-form-label">Age:</label>
+        <div class="col">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Age Character"
+            name="age"
+            #age="ngModel"
+            [(ngModel)]="newCharacter.age"
+          />
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label class="col-2 col-form-label">Race:</label>
+        <div class="col">
+          <select
+            class="form-control"
+            placeholder="Race"
+            name="id_race"
+            #id_race="ngModel"
+            [(ngModel)]="newCharacter.id_race"
+          >
+            <option value="" [disabled]="true">Select a Race...</option>
+            <option *ngFor="let races of allRaces" value="{{ races.id }}">
+              {{ races.race_name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label class="col-2 col-form-label">Side:</label>
+        <div class="col">
+          <select
+            class="form-control"
+            placeholder="Postion"
+            name="position"
+            #position="ngModel"
+            [(ngModel)]="newCharacter.position"
+          >
+            <option value="" [disabled]="true">Select a Side...</option>
+            <option value="1">Good</option>
+            <option value="2">Evil</option>
+            <option value="3">Neutral</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label class="col-2 col-form-label">Description:</label>
+        <div class="col">
+          <textarea
+            class="form-control"
+            cols="30"
+            rows="5"
+            placeholder="Description"
+            name="description"
+            #description="ngModel"
+            [(ngModel)]="newCharacter.description"
+          ></textarea>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label class="col-2 col-form-label">History:</label>
+        <div class="col">
+          <textarea
+            class="form-control"
+            cols="30"
+            rows="5"
+            placeholder="History"
+            name="story"
+            #story="ngModel"
+            [(ngModel)]="newCharacter.story"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="form-group col-md-12">
+        <label class="col-2 col-form-label">Image:</label>
+        <div class="col">
+          <input
+            class="form-control"
+            type="file"
+             placeholder="Nombre"
+            formControlName="nombre"
+          />
+        </div>
+      </div>
+    </div> -->
+    <br />
+    <hr />
+    <div class="row">
+      <div class="form-group col-md-12">
+        <div class="input-group col">
+          <button
+            type="submit"
+            class="btn btn-outline-primary btn-block"
+            [disabled]="registerForm.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

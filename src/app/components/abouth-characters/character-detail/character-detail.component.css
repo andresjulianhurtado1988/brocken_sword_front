@@ -1,0 +1,24 @@
+.imagen-character {
+  margin-left: 100px;
+  width: 360px;
+  height: 320px;
+}
+
+.example-card-character {
+  margin-right: 150px;
+  margin-bottom: 40px;
+}
+
+.character-bio {
+  font-size: 10pt;
+}
+
+.example-viewport {
+ 
+  height: 220px;
+  width: 3100px;
+}
+
+.example-item {
+  height: 50px;
+}

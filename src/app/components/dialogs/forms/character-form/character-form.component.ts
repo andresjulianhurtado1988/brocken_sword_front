@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Characters } from 'src/app/models/character';
 import { CharacterService } from 'src/app/services/character.service';
 import { LandService } from 'src/app/services/land.service';
@@ -24,7 +25,8 @@ export class CharacterFormComponent {
     private fb: FormBuilder,
     private _characterService: CharacterService,
     private _landService: LandService,
-    private _worldService: WorldService
+    private _worldService: WorldService,
+    public dialogRef: MatDialogRef<CharacterFormComponent>
   ) {
     this.status = '';
     this.lands = [];
@@ -88,14 +90,12 @@ export class CharacterFormComponent {
   }
 
   onSubmit(form: any) {
-   
     this._characterService.registerCharacter(this.newCharacter).subscribe(
       (response) => {
         console.log(this.newCharacter);
         if (response.status == 'success') {
           this.status = response.status;
-          form.reset();
-          //this.getOrders();
+          this.dialogRef.close();
         } else {
           this.status = 'error';
         }

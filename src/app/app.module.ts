@@ -30,8 +30,9 @@ import { DialogReligionComponent } from './components/dialogs/dialog-religion/di
 import { TheBrokenSwordComponent } from './components/the-broken-sword/the-broken-sword/the-broken-sword.component';
 import { LandsFormComponent } from './components/abouth-lands/lands-form/lands-form.component';
 import { LandsInfoComponent } from './components/abouth-lands/lands-info/lands-info.component';
-import { CharacterFormComponent } from './components/dialogs/forms/character-form/character-form.component';
-
+import { DialogImagenFormComponent } from './components/dialogs/forms/dialog-image-form/dialog-image-form.component';
+import { DialogCharacterFormComponent } from './components/dialogs/forms/dialog-character-form/dialog-character-form.component';
+import { AngularApestaComponent } from './components/angular-apesta/angular-apesta.component';
 
 @NgModule({
   declarations: [
@@ -56,8 +57,9 @@ import { CharacterFormComponent } from './components/dialogs/forms/character-for
     TheBrokenSwordComponent,
     LandsFormComponent,
     LandsInfoComponent,
-    CharacterFormComponent,
-
+    DialogImagenFormComponent,
+    DialogCharacterFormComponent,
+    AngularApestaComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
-.imagen-character {
-  margin-left: 100px;
-  width: 360px;
-  height: 320px;
+.no-imagen-character {
+  margin-left: 73px;
+  width: 200px;
+  height: 200px;
 }
 
 .example-card-character {
@@ -21,4 +21,9 @@
 
 .example-item {
   height: 50px;
+}
+
+.nueva-clase {
+  margin-left: 180px;
+  margin-bottom: 40px;
 }

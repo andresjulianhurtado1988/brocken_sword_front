@@ -8,11 +8,11 @@ import { WorldService } from 'src/app/services/world.service';
 
 @Component({
   selector: 'app-character-form',
-  templateUrl: './character-form.component.html',
-  styleUrls: ['./character-form.component.css'],
+  templateUrl: './dialog-character-form.component.html',
+  styleUrls: ['./dialog-character-form.component.css'],
   providers: [LandService],
 })
-export class CharacterFormComponent {
+export class DialogCharacterFormComponent {
   // form: FormGroup;
   public lands: any[] = [];
   public magic_system: any[] = [];
@@ -26,7 +26,7 @@ export class CharacterFormComponent {
     private _characterService: CharacterService,
     private _landService: LandService,
     private _worldService: WorldService,
-    public dialogRef: MatDialogRef<CharacterFormComponent>
+    public dialogRef: MatDialogRef<DialogCharacterFormComponent>
   ) {
     this.status = '';
     this.lands = [];

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { global_url } from '../global/url_back';
@@ -8,6 +8,7 @@ import { global_url } from '../global/url_back';
 })
 export class CharacterService {
   public url: string;
+  public algo: any;
 
   constructor(public _http: HttpClient) {
     this.url = global_url.url;
@@ -38,5 +39,12 @@ export class CharacterService {
         'Content-type': 'application/x-www-form-urlencoded',
       }),
     });
+  }
+
+  registerCharacterImage(fileCharacter: any): Observable<any> {
+    return this._http.post(
+      this.url + 'characters/registerCharacterImage',
+      fileCharacter
+    );
   }
 }

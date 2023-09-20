@@ -7,8 +7,6 @@ export class Characters {
     public id_race: number,
     public position: number,
     public description: string,
-    public story: string,
-    //    public image: string,
-   
+    public story: string
   ) {}
 }

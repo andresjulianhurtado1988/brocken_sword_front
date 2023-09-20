@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 import { CharacterService } from 'src/app/services/character.service';
-
+import { global_url } from 'src/app/global/url_back';
+import { DialogCharacterFormComponent } from '../../dialogs/forms/dialog-character-form/dialog-character-form.component';
+import { DialogImagenFormComponent } from '../../dialogs/forms/dialog-image-form/dialog-image-form.component';
+import { DialogCharacterComponent } from '../../dialogs/dialog-character/dialog-character.component';
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
@@ -14,16 +15,27 @@ export class CharactersComponent {
   public id_character: number;
   public status: string;
   public the_character: any[] = [];
+  public url: any;
+  public prevImage: any;
+  public noImage: string;
 
-  constructor(private _characterService: CharacterService) {
+  public selectedFile!: File;
+
+  constructor(
+    private _characterService: CharacterService,
+    public dialog: MatDialog
+  ) {
     this.id_character = 1;
     this.status = '';
     this.the_character = [];
+    this.url = global_url.url;
+    this.prevImage = null;
+    this.noImage = 'assets/img/noimage.png';
   }
 
   ngOnInit(): void {
-    this.showCharacter(this.id_character);
     this.getCharacters();
+    this.showCharacter(this.id_character);
   }
 
   getCharacters() {
@@ -42,6 +54,8 @@ export class CharactersComponent {
   }
 
   showCharacter(id_character: number) {
+    this.id_character = id_character;
+
     this._characterService.showCharacter(id_character).subscribe(
       (response) => {
         if (response.status == 'success') {
@@ -54,5 +68,40 @@ export class CharactersComponent {
         this.status = 'error';
       }
     );
+    this.prevImage = null;
+  }
+
+  openDialogFormCharacter() {
+    const dialogRef = this.dialog.open(DialogCharacterFormComponent);
+  }
+  openDialogBiography(id: number) {
+    this._characterService.showCharacter(id).subscribe((response) => {
+      const dialogRef = this.dialog.open(DialogCharacterComponent, {
+        data: {
+          data_character: response.characters,
+        },
+      });
+    });
+  }
+
+  cargarImagen(event: any) {
+    this.selectedFile = <File>event.target.files[0];
+    const file = event.target.files[0];
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.prevImage = reader.result;
+    };
+  }
+
+  enviarImagen(id: string) {
+    const fd = new FormData();
+
+    fd.append('image', this.selectedFile, this.selectedFile.name);
+    fd.append('id_chacaracter', id);
+
+    this._characterService.registerCharacterImage(fd).subscribe((resp) => {});
+    let variable = Number(id);
   }
 }

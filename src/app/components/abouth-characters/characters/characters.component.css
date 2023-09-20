@@ -42,3 +42,14 @@
 .tittle-align {
   float: center;
 }
+.no-imagen-character {
+  margin-left: 73px;
+  width: 200px;
+  height: 200px;
+}
+
+.image-character {
+  margin-left: 73px;
+  width: 200px;
+  height: 200px;
+}

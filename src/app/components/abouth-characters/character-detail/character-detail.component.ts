@@ -1,8 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogCharacterComponent } from '../../dialogs/dialog-character/dialog-character.component';
 import { CharacterService } from 'src/app/services/character.service';
-import { CharacterFormComponent } from '../../dialogs/forms/character-form/character-form.component';
+import { DialogCharacterFormComponent } from '../../dialogs/forms/dialog-character-form/dialog-character-form.component';
+import { DialogImagenFormComponent } from '../../dialogs/forms/dialog-image-form/dialog-image-form.component';
+import { global_url } from 'src/app/global/url_back';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-character-detail',
@@ -11,13 +14,24 @@ import { CharacterFormComponent } from '../../dialogs/forms/character-form/chara
 })
 export class CharacterDetailComponent {
   @Input() the_character: any;
-  public status: string;
+
+
+  public selectedFile!: File;
+  public character_id: any;
+  public url: any;
+  public prevImage: any;
+  public noImage: string;
+
+  private sanitizer!: DomSanitizer;
+
 
   constructor(
     public dialog: MatDialog,
     private _characterService: CharacterService
   ) {
-    this.status = '';
+    this.url = global_url.url;
+    this.prevImage = null;
+    this.noImage = 'assets/img/noimage.png';
   }
 
   openDialogBiography(id: number) {
@@ -31,8 +45,38 @@ export class CharacterDetailComponent {
   }
 
   openDialogFormCharacter() {
-    const dialogRef = this.dialog.open(CharacterFormComponent);
+    const dialogRef = this.dialog.open(DialogCharacterFormComponent);
+  }
+
+  openDialogFormImageCharacter(id: number) {
+    const dialogRef = this.dialog.open(DialogImagenFormComponent, {
+      data: {
+        id_character: id,
+      },
+    });
+  }
+
+  cargarImagen(event: any) {
+    this.selectedFile = <File>event.target.files[0];
+    const file = event.target.files[0];
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.prevImage = reader.result;
+      console.log(this.prevImage);
+    };
+  }
+
+  enviarImagen(id: number) {
+    const fd = new FormData();
+    this.character_id = id;
+
+    fd.append('image', this.selectedFile, this.selectedFile.name);
+    fd.append('id_chacaracter', this.character_id);
+
+    this._characterService.registerCharacterImage(fd).subscribe((resp) => {
+      console.log(resp);
+    });
   }
 }
-
-//C0C-9C7-3DD

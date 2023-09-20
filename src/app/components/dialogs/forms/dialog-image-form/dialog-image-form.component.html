@@ -1,0 +1,37 @@
+<div mat-dialog-content>
+  <h4>Imgage Character</h4>
+  <hr />
+
+  <form #imageForm="ngForm">
+    <div class="row">
+      <div class="form-group col-md-12">
+        <label class="col-2 col-form-label">Image:</label>
+        <div class="col">
+          <input
+            class="form-control"
+            type="file"
+            placeholder="Nombre"
+            name="image"
+            (change)="cargarImagen($event)"
+          />
+        </div>
+      </div>
+    </div>
+    <br />
+    <hr />
+    <div class="row">
+      <div class="form-group col-md-12">
+        <div class="input-group col">
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-block"
+            (click)="enviarImagen()"
+            
+          >
+            Subir archivo
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

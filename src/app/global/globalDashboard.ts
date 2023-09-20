@@ -8,8 +8,8 @@ export var dashboardData = {
       image: '',
       array_options: [
         {
-          routes: '',
-          options: 'Hello World',
+          routes: '/angular-apesta',
+          options: 'Angular Apesta',
         },
       ],
     },

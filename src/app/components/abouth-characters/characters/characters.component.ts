@@ -43,6 +43,8 @@ export class CharactersComponent {
       (response) => {
         if (response.status == 'success') {
           this.characters = response.characters;
+          this.prevImage = null;
+          console.log(this.characters);
         } else {
           this.status = 'error';
         }
@@ -101,7 +103,11 @@ export class CharactersComponent {
     fd.append('image', this.selectedFile, this.selectedFile.name);
     fd.append('id_chacaracter', id);
 
-    this._characterService.registerCharacterImage(fd).subscribe((resp) => {});
-    let variable = Number(id);
+    this._characterService.registerCharacterImage(fd).subscribe((resp) => {
+      this.showCharacter(this.id_character);
+      this.getCharacters();
+    });
+
+    
   }
 }

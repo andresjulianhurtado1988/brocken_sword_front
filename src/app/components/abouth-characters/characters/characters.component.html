@@ -1,135 +1,126 @@
-<div class="container m-5">
-  <div class="row">
-    <div class="row" *ngFor="let character of the_character">
-      <div class="col-md-4">
-        <div class="card mb-3" style="max-width: 540px">
-          <div class="row g-0">
-            <div
-              class="col-md-12"
-              *ngIf="character.img_character; else noCourses"
-            >
-              <img
-                class="img-fluid rounded-start"
-                [src]="
-                  url +
-                  'characters/getCharacterImage/' +
-                  character.img_character
-                "
-                alt=""
-              />
-            </div>
-            <ng-template #noCourses>
-              <img class="image-character" [src]="prevImage ?? noImage" />
-
-              <div class="row">
-                <div class="card-body col-md-12">
-                  <form #imageForm="ngForm">
-                    <div class="row">
-                      <div class="form-group col-md-12">
-                        <label class="col-12 col-form-label"
-                          >Upload Image:</label
-                        >
-                        <div class="col">
-                          <input
-                            class="form-control"
-                            type="file"
-                            placeholder="Nombre"
-                            name="image"
-                            (change)="cargarImagen($event)"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="form-group col-md-12">
-                        <div class="input-group col">
-                          <button
-                            type="button"
-                            class="btn btn-outline-primary btn-block"
-                            (click)="enviarImagen(character.id)"
-                          >
-                            Subir archivo
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
+<div class="row" *ngFor="let character of the_character">
+  <div class="col-md-4">
+    <div class="row g-0">
+      <div class="col-md-12" *ngIf="character.img_character; else noCourses">
+        <img
+          class="image-character center-image"
+          [src]="
+            url + 'characters/getCharacterImage/' + character.img_character
+          "
+          alt=""
+        />
+      </div>
+      <ng-template #noCourses>
+        <img class="image-character" [src]="prevImage ?? noImage" />
+        <div class="row">
+          <form #imageForm="ngForm">
+            <div class="row">
+              <div class="form-group col-md-12">
+                <div class="col">
+                  <input
+                    class="form-control"
+                    type="file"
+                    placeholder="Nombre"
+                    name="image"
+                    (change)="cargarImagen($event)"
+                  />
                 </div>
               </div>
-            </ng-template>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="card mb-3">
-          <div class="row g-0">
-            <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
-              <div class="row row-cols-5 row-cols-md-5 g-5">
-                <div class="col-md-12">
-                  <h3 class="card-title">
-                    <strong>{{ character.character_name }}</strong>
-                  </h3>
-                  <p class="card-text">
-                    {{ character.description }}
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Delectus quaerat error voluptates aliquid molestiae dicta,
-                    nihil sint autem, sequi animi, labore voluptas sed incidunt
-                    quae natus ut quis. Dolorem, aut?
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Fugit nisi, rerum quia possimus sint delectus doloremque
-                    officia animi ea doloribus debitis eos, quae enim molestias
-                    quos tempore facilis maxime sed!
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Illum dolorum porro, id vel labore voluptatibus quam facilis
-                    deserunt minima impedit odit voluptatum odio voluptate sint?
-                    Recusandae quibusdam illum libero quos.
-                  </p>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-12">
+                <div class="input-group col">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary btn-block"
+                    (click)="enviarImagen(character.id)"
+                  >
+                    Subir archivo
+                  </button>
                 </div>
               </div>
-            </cdk-virtual-scroll-viewport>
-
-            <div class="card-footer">
-              <button mat-button (click)="openDialogBiography(character.id)">
-                Open dialog BIO
-              </button>
-              <button mat-button (click)="openDialogFormCharacter()">
-                New Character
-              </button>
             </div>
-          </div>
+          </form>
         </div>
-      </div>
+      </ng-template>
     </div>
-
-    <!-- <app-character-detail
-      [the_character]="the_character"
-    ></app-character-detail> -->
   </div>
-  <div class="row m-1">
-    <cdk-virtual-scroll-viewport itemSize="5" class="example-viewport">
-      <div class="row row-cols-5 row-cols-md-5 g-4">
-        <div
-          class="col pointer"
-          *ngFor="let character of characters"
-          (click)="showCharacter(character.id)"
-        >
-          <div class="card">
-            <img class="imagen img-circle" [src]="character.imagen | noImage" />
-            <div class="card-body">
-              <p class="text-center">
+  <div class="col-md-8">
+    <div class="card mb-3 no-border align-card ">
+      <div class="row g-0">
+        <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
+          <div class="row row-cols-5 row-cols-md-5 g-5">
+            <div class="col-md-12">
+              <h3 class="card-title">
                 <strong>{{ character.character_name }}</strong>
+              </h3>
+              <p class="card-text">
+                {{ character.description }}
+              </p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Delectus quaerat error voluptates aliquid molestiae dicta, nihil
+                sint autem, sequi animi, labore voluptas sed incidunt quae natus
+                ut quis. Dolorem, aut?
+              </p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit
+                nisi, rerum quia possimus sint delectus doloremque officia animi
+                ea doloribus debitis eos, quae enim molestias quos tempore
+                facilis maxime sed!
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum
+                dolorum porro, id vel labore voluptatibus quam facilis deserunt
+                minima impedit odit voluptatum odio voluptate sint? Recusandae
+                quibusdam illum libero quos.
               </p>
             </div>
           </div>
+        </cdk-virtual-scroll-viewport>
+
+        <div class="card-footer">
+          <button mat-button (click)="openDialogBiography(character.id)">
+            Open dialog BIO
+          </button>
+          <button mat-button (click)="openDialogFormCharacter()">
+            New Character
+          </button>
         </div>
       </div>
-    </cdk-virtual-scroll-viewport>
+    </div>
   </div>
+</div>
+
+<div class="row m-1">
+  <cdk-virtual-scroll-viewport itemSize="5" class="example-viewport">
+    <div class="row row-cols-5 row-cols-md-5 g-4">
+      <div
+        class="col pointer"
+        *ngFor="let character of characters"
+        (click)="showCharacter(character.id)"
+      >
+        <div class="card no-border" *ngIf="character.imagen; else sinImagen">
+          <img
+            class="list-image"
+            [src]="url + 'characters/getCharacterImage/' + character.imagen"
+          />
+          <div class="card-body">
+            <p class="text-center">
+              <strong>{{ character.character_name }}</strong>
+            </p>
+          </div>
+        </div>
+
+        <ng-template #sinImagen>
+          <img class="no-imagen-character-list" [src]="noImage" />
+          <div class="card-body">
+            <p class="text-center">
+              <strong>{{ character.character_name }}</strong>
+            </p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </cdk-virtual-scroll-viewport>
 </div>

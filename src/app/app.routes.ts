@@ -12,7 +12,6 @@ import { MagicSystemComponent } from './components/the-know-world/magic-system/m
 import { RacesComponent } from './components/the-know-world/races/races.component';
 import { TheBrokenSwordComponent } from './components/the-broken-sword/the-broken-sword/the-broken-sword.component';
 import { LandsInfoComponent } from './components/abouth-lands/lands-info/lands-info.component';
-import { AngularApestaComponent } from './components/angular-apesta/angular-apesta.component';
 
 export const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -27,7 +26,6 @@ export const ROUTES: Routes = [
   { path: 'magic-system', component: MagicSystemComponent },
   { path: 'races', component: RacesComponent },
   { path: 'the-broken-sword', component: TheBrokenSwordComponent },
-  { path: 'angular-apesta', component: AngularApestaComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

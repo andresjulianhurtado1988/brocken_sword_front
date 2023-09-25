@@ -3,8 +3,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { CharacterService } from 'src/app/services/character.service';
 import { global_url } from 'src/app/global/url_back';
 import { DialogCharacterFormComponent } from '../../dialogs/forms/dialog-character-form/dialog-character-form.component';
-import { DialogImagenFormComponent } from '../../dialogs/forms/dialog-image-form/dialog-image-form.component';
 import { DialogCharacterComponent } from '../../dialogs/dialog-character/dialog-character.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { CharacterAlertComponent } from '../../alerts/character-alert/character-alert.component';
+
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
@@ -20,10 +22,12 @@ export class CharactersComponent {
   public noImage: string;
 
   public selectedFile!: File;
+  public durationInSeconds = 5;
 
   constructor(
     private _characterService: CharacterService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar
   ) {
     this.id_character = 1;
     this.status = '';
@@ -76,6 +80,7 @@ export class CharactersComponent {
   openDialogFormCharacter() {
     const dialogRef = this.dialog.open(DialogCharacterFormComponent);
   }
+
   openDialogBiography(id: number) {
     this._characterService.showCharacter(id).subscribe((response) => {
       const dialogRef = this.dialog.open(DialogCharacterComponent, {
@@ -104,10 +109,20 @@ export class CharactersComponent {
     fd.append('id_chacaracter', id);
 
     this._characterService.registerCharacterImage(fd).subscribe((resp) => {
-      this.showCharacter(this.id_character);
-      this.getCharacters();
+      if (resp.status == 'success') {
+        this.status = resp.status;
+        this.openSnackBar();
+        this.showCharacter(this.id_character);
+        this.getCharacters();
+      } else {
+        this.status = 'error';
+      }
     });
+  }
 
-    
+  openSnackBar() {
+    this._snackBar.openFromComponent(CharacterAlertComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
   }
 }

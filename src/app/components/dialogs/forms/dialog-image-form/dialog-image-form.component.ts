@@ -1,5 +1,4 @@
 import { Component, Inject } from '@angular/core';
-import { ImgCharacters } from 'src/app/models/imgCharacter';
 import { CharacterService } from 'src/app/services/character.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
@@ -11,7 +10,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DialogImagenFormComponent {
   public status: string;
-  public imgCharacter!: ImgCharacters;
   public character_id: any;
   public selectedFile!: File;
   public fileCharacter: any[] = [];
@@ -42,7 +40,5 @@ export class DialogImagenFormComponent {
     });
 
     this.dialogRef.close();
-
-  
   }
 }

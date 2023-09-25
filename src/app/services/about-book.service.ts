@@ -6,23 +6,23 @@ import { global_url } from '../global/url_back';
 @Injectable({
   providedIn: 'root',
 })
-export class WorldService {
+export class AboutBookService {
   public url: string;
 
   constructor(public _http: HttpClient) {
     this.url = global_url.url;
   }
 
-  getMagicSystem(): Observable<any> {
-    return this._http.get(this.url + 'world/getMagicSystem', {
+  getProtagonist(): Observable<any> {
+    return this._http.get(this.url + 'world/getProtagonist', {
       headers: new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded',
       }),
     });
   }
 
-  getRaces(): Observable<any> {
-    return this._http.get(this.url + 'world/getRaces', {
+  getBooks(): Observable<any> {
+    return this._http.get(this.url + 'world/getBooks', {
       headers: new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded',
       }),

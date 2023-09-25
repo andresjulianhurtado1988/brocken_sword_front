@@ -32,7 +32,10 @@ import { LandsFormComponent } from './components/abouth-lands/lands-form/lands-f
 import { LandsInfoComponent } from './components/abouth-lands/lands-info/lands-info.component';
 import { DialogImagenFormComponent } from './components/dialogs/forms/dialog-image-form/dialog-image-form.component';
 import { DialogCharacterFormComponent } from './components/dialogs/forms/dialog-character-form/dialog-character-form.component';
-import { AngularApestaComponent } from './components/angular-apesta/angular-apesta.component';
+
+import { CharacterAlertComponent } from './components/alerts/character-alert/character-alert.component';
+import { TheAncientHallowsComponent } from './components/the-know-world/the-ancient-hallows/the-ancient-hallows.component';
+import { TheLordOfTheGraveComponent } from './components/the-know-world/the-lord-of-the-grave/the-lord-of-the-grave.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,9 @@ import { AngularApestaComponent } from './components/angular-apesta/angular-apes
     LandsInfoComponent,
     DialogImagenFormComponent,
     DialogCharacterFormComponent,
-    AngularApestaComponent,
+    CharacterAlertComponent,
+    TheAncientHallowsComponent,
+    TheLordOfTheGraveComponent,
   ],
   imports: [
     BrowserModule,

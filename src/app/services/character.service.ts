@@ -8,7 +8,6 @@ import { global_url } from '../global/url_back';
 })
 export class CharacterService {
   public url: string;
-  public algo: any;
 
   constructor(public _http: HttpClient) {
     this.url = global_url.url;
@@ -47,4 +46,6 @@ export class CharacterService {
       fileCharacter
     );
   }
+
+
 }

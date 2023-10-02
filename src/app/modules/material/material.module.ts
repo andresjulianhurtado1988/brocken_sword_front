@@ -20,6 +20,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+
 @NgModule({
   declarations: [],
   imports: [CommonModule],
@@ -44,6 +48,7 @@ import { MatTreeModule } from '@angular/material/tree';
     MatInputModule,
     MatSnackBarModule,
     MatTreeModule,
+    MatRadioModule,
   ],
 })
 export class MaterialModule {}

@@ -17,11 +17,14 @@ export class LandsInfoComponent {
   public displayedColumns: string[] = [];
   public id_land: number;
 
+  public pruebaExcel: any[] = [];
+
   constructor(private _landService: LandService) {
     this.status = '';
     this.lands = [];
     this.the_land = [];
     this.id_land = 1;
+    this.pruebaExcel = [];
   }
 
   ngOnInit(): void {

@@ -14,7 +14,7 @@ export class TheBrokenSwordComponent {
   ngOnInit(): void {
     this._aboutBooks.getBooks().subscribe((response) => {
       this.AllBooksNames = response.books;
-      console.log(this.AllBooksNames);
+     
     });
   }
 }

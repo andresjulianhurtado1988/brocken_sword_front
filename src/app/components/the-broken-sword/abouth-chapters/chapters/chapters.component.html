@@ -1,0 +1,134 @@
+<div class="container m-5">
+  <div class="row">
+    <div class="col-md-12">
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        novalidate
+        autocomplete="off"
+      >
+        <div class="row">
+          <input type="hidden" formControlName="book_id" value="[book_id]" />
+
+          <label class="col-6 col-form-label">Chose a Character </label>
+          <div class="form-group col-md-12">
+            <mat-radio-group formControlName="protagonist_id">
+              <mat-radio-button
+                [checked]="true"
+                [value]="1"
+                (click)="getChaptersByCharacter(book_id, 1)"
+                >Haguen of Merak</mat-radio-button
+              >
+              <mat-radio-button
+                [value]="2"
+                (click)="getChaptersByCharacter(book_id, 2)"
+                >Terissa of Numbra</mat-radio-button
+              >
+              <mat-radio-button
+                [value]="3"
+                (click)="getChaptersByCharacter(book_id, 3)"
+                >Ardos of Meldáric</mat-radio-button
+              >
+              <mat-radio-button
+                [value]="4"
+                (click)="getChaptersByCharacter(book_id, 4)"
+                >Hanna "The Black Fish" of Naminn</mat-radio-button
+              >
+              <mat-radio-button
+                [value]="5"
+                (click)="getChaptersByCharacter(book_id, 5)"
+                >Interlude</mat-radio-button
+              >
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="col-4 col-form-label">Chapter Abouth... </label>
+          <label class="col-4 col-form-label">Short Description:</label>
+          <label class="col-4 col-form-label">Pages:</label>
+        </div>
+        <div class="row">
+          <mat-form-field class="col-md-4">
+            <mat-label>Chapter Abouth...</mat-label>
+            <input matInput formControlName="name" autocomplete="off" />
+            <!-- <small *ngIf="nameRequired" class="text-danger">Is Required</small> -->
+            <mat-error
+              *ngIf="form.controls['name']?.errors?.['required'] && form.controls['name']?.touched"
+            >
+              Is Required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="col-md-4">
+            <mat-label>Short Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+            <mat-error
+              *ngIf="form.controls['description']?.errors?.['required'] && form.controls['description']?.touched"
+            >
+              Is Required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="col-md-2">
+            <mat-label>Pages...</mat-label>
+            <input matInput formControlName="pages" autocomplete="off" />
+            <mat-error
+              *ngIf="form.controls['pages']?.errors?.['required']  && form.controls['pages']?.touched"
+            >
+              Is Required
+            </mat-error>
+            <mat-error
+              *ngIf="form.controls['pages']?.errors?.['pattern'] && form.controls['pages']?.touched"
+            >
+              Is Not Number
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <hr />
+      </form>
+      <div class="row">
+        <button
+          type="button"
+          class="btn btn-outline-primary mt-3 mb-5 btn-block"
+          (click)="onSubmit()"
+          [disabled]="form.invalid"
+        >
+          <strong>Save</strong>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Chapter Name</th>
+            <th scope="col">number of pages</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let chapters of chaptersByCharacter; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ chapters.name }}</td>
+            <td>{{ chapters.pages }}</td>
+            <td>
+              <button
+                mat-button
+                color="primary"
+                (click)="openDialogChapterDetail(chapters.id)"
+              >
+                <strong>Chapter Detail</strong>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>

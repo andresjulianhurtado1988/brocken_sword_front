@@ -1,9 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogCharacterComponent } from '../../dialogs/dialog-character/dialog-character.component';
+import { DialogCharacterComponent } from '../dialogs/dialog-character/dialog-character.component';
 import { CharacterService } from 'src/app/services/character.service';
-import { DialogCharacterFormComponent } from '../../dialogs/forms/dialog-character-form/dialog-character-form.component';
-import { DialogImagenFormComponent } from '../../dialogs/forms/dialog-image-form/dialog-image-form.component';
+import { DialogCharacterFormComponent } from '../dialogs/dialog-character-form/dialog-character-form.component';
 import { global_url } from 'src/app/global/url_back';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -15,7 +14,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class CharacterDetailComponent {
   @Input() the_character: any;
 
-
   public selectedFile!: File;
   public character_id: any;
   public url: any;
@@ -23,7 +21,6 @@ export class CharacterDetailComponent {
   public noImage: string;
 
   private sanitizer!: DomSanitizer;
-
 
   constructor(
     public dialog: MatDialog,
@@ -46,14 +43,6 @@ export class CharacterDetailComponent {
 
   openDialogFormCharacter() {
     const dialogRef = this.dialog.open(DialogCharacterFormComponent);
-  }
-
-  openDialogFormImageCharacter(id: number) {
-    const dialogRef = this.dialog.open(DialogImagenFormComponent, {
-      data: {
-        id_character: id,
-      },
-    });
   }
 
   cargarImagen(event: any) {

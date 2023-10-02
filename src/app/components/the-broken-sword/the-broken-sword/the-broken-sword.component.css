@@ -1,0 +1,51 @@
+.back-ground-img-blue {
+  background-image: url("https://img.freepik.com/fotos-premium/fondo-arte-abstracto-colores-azul-marino-pintura-acuarela-sobre-lienzo-degradado-zafiro_113767-5463.jpg");
+  opacity: 0.8;
+  background-color: #cccccc;
+}
+
+.back-ground-img-green {
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/005/182/612/small/green-abstract-geometric-shape-background-free-vector.jpg");
+  opacity: 0.8;
+  background-color: #cccccc;
+}
+
+.back-ground-img-red {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXfYOVWcul4Iyfu5PjLLLNRfwLVpJuzDtmvBqZGU2R&s");
+  opacity: 0.8;
+  background-color: #cccccc;
+}
+
+.back-ground-img-grey {
+  background-image: url("https://img.freepik.com/fotos-premium/superficie-blanco-textura-sucia-fondo-gris-abstracto-papel-tapiz-cartel-sucio-sto-grano-aspero_124507-10829.jpg");
+  opacity: 0.8;
+  background-color: #cccccc;
+}
+
+.back-ground-img-blue:hover {
+  opacity: 1;
+}
+
+.back-ground-img-green:hover {
+  opacity: 1;
+}
+.back-ground-img-red:hover {
+  opacity: 1;
+}
+.back-ground-img-grey:hover {
+  opacity: 1;
+}
+
+.color-strong {
+  color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover {
+  font-size: 130%;
+}
+
+/*[style.background-image]="'url('+flag.properties.Image+')'"*/

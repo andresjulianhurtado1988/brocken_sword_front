@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CharacterService } from 'src/app/services/character.service';
 import { global_url } from 'src/app/global/url_back';
-import { DialogCharacterFormComponent } from '../../dialogs/forms/dialog-character-form/dialog-character-form.component';
-import { DialogCharacterComponent } from '../../dialogs/dialog-character/dialog-character.component';
+import { DialogCharacterFormComponent } from '../dialogs/dialog-character-form/dialog-character-form.component';
+import { DialogCharacterComponent } from '../dialogs/dialog-character/dialog-character.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CharacterAlertComponent } from '../../alerts/character-alert/character-alert.component';
+import { CharacterAlertComponent } from '../alerts/character-alert/character-alert.component';
 
 @Component({
   selector: 'app-characters',

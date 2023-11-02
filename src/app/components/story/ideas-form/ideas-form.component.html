@@ -27,11 +27,11 @@
             <mat-label>Abouth</mat-label>
             <mat-select formControlName="themes_id" cdkFocusInitial>
               <mat-option
-                *ngFor="let theme of aboutThemes"
-                [value]="theme.id"
+                *ngFor="let data of allData"
+                [value]="data.id"
                 [disabled]="selectedOption"
               >
-                {{ theme.description }}</mat-option
+                {{ data.name }}</mat-option
               >
             </mat-select>
           </mat-form-field>

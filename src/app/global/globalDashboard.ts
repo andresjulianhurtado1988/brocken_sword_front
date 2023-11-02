@@ -1,15 +1,16 @@
 export var dashboardData = {
   myDashBoard: [
     {
-      title: 'Card number uan',
+      title: 'Ideas',
       cols: 1,
       rows: 1,
-      content: 'hola mundo',
+      content:
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos,laudantium iure. Ab, delectus ad veritatis deserunt incidunt dolorum eos, pariatur rerum rem nihil doloremque? Unde id veroesse tempore repellat.',
       image: '',
       array_options: [
         {
-          routes: '/angular-apesta',
-          options: 'Angular Apesta',
+          routes: '/list-ideas',
+          options: 'Ideas',
         },
       ],
     },
@@ -56,18 +57,5 @@ export var dashboardData = {
         },
       ],
     },
-    // {
-    //   title: 'Card number for',
-    //   cols: 2,
-    //   rows: 1,
-    //   content: 'hola mundo',
-    //   image: '',
-    //   array_options: [
-    //     {
-    //       routes: '/autor',
-    //       options: 'The Author',
-    //     },
-    //   ],
-    // },
   ],
 };

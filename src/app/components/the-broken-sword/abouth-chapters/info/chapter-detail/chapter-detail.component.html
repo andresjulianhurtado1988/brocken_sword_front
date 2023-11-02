@@ -1,4 +1,4 @@
-<mat-dialog-content class="mat-typography">
+<mat-dialog-content class="mat-typography tamanio">
   <div class="row">
     <div class="col-md-6">
       <h3><strong>Starring:</strong> {{ protagonist }}</h3>
@@ -11,21 +11,39 @@
     <strong>{{ name }}</strong>
   </div>
   <hr />
-  <div class="row">
-    <p>
-      {{ description }}
-      <br />
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed vitae illum,
-      est dolor eum libero! Modi, earum quia! Distinctio obcaecati voluptatum
-      unde? Ex modi illum doloremque recusandae dicta magnam officiis.
-      <br />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam tenetur
-      asperiores soluta, animi incidunt omnis minima aliquid tempora quis
-      suscipit? Quos reprehenderit vero possimus aliquam nisi quo dolorem sint
-      aut.
-    </p>
-  </div>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    novalidate
+    autocomplete="off"
+  >
+    <div class="row">
+      <mat-form-field class="example-full-width">
+        <mat-label></mat-label>
+        <textarea
+          formControlName="chapter"
+          matInput
+          placeholder="Chapter Content..."
+          class="chapter-content"
+        ></textarea>
+      </mat-form-field>
+      <mat-error
+        *ngIf="form.controls['chapter']?.errors?.['required']  && form.controls['chapter']?.touched"
+      >
+        Is Required
+      </mat-error>
+    </div>
+  </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
+  <button
+    type="button"
+    class="btn btn-outline-primary mt-3 mb-5 btn-block"
+    (click)="onSubmit()"
+    [disabled]="form.invalid"
+  >
+    <strong>Save</strong>
+  </button>
+
   <button mat-button mat-dialog-close>Cancel</button>
 </mat-dialog-actions>

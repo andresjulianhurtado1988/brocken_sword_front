@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Install Angular</h2>
+<mat-dialog-content class="mat-typography tamanio">
+  <button *ngFor="let ch of chapters" class="no-border-on-text pointer">
+    {{ ch.description }}
+  </button>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

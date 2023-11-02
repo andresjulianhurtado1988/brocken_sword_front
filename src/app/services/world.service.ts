@@ -37,6 +37,17 @@ export class WorldService {
     });
   }
 
+  getStoryByChapter(chapter_id: number): Observable<any> {
+    return this._http.get(
+      this.url + 'world/getStoryByChapter/' + chapter_id,
+      {
+        headers: new HttpHeaders({
+          'Content-type': 'application/x-www-form-urlencoded',
+        }),
+      }
+    );
+  }
+
   getChaptersByCharacter(
     book_id: number,
     character_id: number
@@ -56,6 +67,17 @@ export class WorldService {
     let params = 'json=' + json;
 
     return this._http.post(this.url + 'world/registerChapter', params, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+
+  registerChapterContent(chapter: any): Observable<any> {
+    let json = JSON.stringify(chapter);
+    let params = 'json=' + json;
+
+    return this._http.post(this.url + 'world/registerChapterContent', params, {
       headers: new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded',
       }),

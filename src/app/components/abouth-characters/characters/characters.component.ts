@@ -48,7 +48,7 @@ export class CharactersComponent {
         if (response.status == 'success') {
           this.characters = response.characters;
           this.prevImage = null;
-          console.log(this.characters);
+          
         } else {
           this.status = 'error';
         }

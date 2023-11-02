@@ -13,6 +13,7 @@ import { RacesComponent } from './components/the-know-world/races/races.componen
 import { TheBrokenSwordComponent } from './components/the-broken-sword/the-broken-sword/the-broken-sword.component';
 import { LandsInfoComponent } from './components/abouth-lands/lands-info/lands-info.component';
 import { ChaptersComponent } from './components/the-broken-sword/abouth-chapters/chapters/chapters.component';
+import { ListIdeasComponent } from './components/story/list-ideas/list-ideas.component';
 
 export const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -27,6 +28,7 @@ export const ROUTES: Routes = [
   { path: 'magic-system', component: MagicSystemComponent },
   { path: 'races', component: RacesComponent },
   { path: 'the-broken-sword', component: TheBrokenSwordComponent },
+  { path: 'list-ideas', component: ListIdeasComponent },
   { path: 'chapters/:id', component: ChaptersComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },

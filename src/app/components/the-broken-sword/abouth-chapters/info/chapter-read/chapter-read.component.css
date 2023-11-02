@@ -4,6 +4,10 @@
 }
 
 .tamanio {
-  width: 1000px;
+  width: 700px;
   height: 1000px;
+}
+
+.no-border-on-text {
+  border: 1px;
 }

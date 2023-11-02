@@ -37,6 +37,11 @@ import { TheLordOfTheGraveComponent } from './components/the-know-world/the-lord
 import { ChaptersComponent } from './components/the-broken-sword/abouth-chapters/chapters/chapters.component';
 import { ChapterAlertComponent } from './components/the-broken-sword/abouth-chapters/info/chapter-alert/chapter-alert.component';
 import { ChapterDetailComponent } from './components/the-broken-sword/abouth-chapters/info/chapter-detail/chapter-detail.component';
+import { ChapterReadComponent } from './components/the-broken-sword/abouth-chapters/info/chapter-read/chapter-read.component';
+import { IdeasComponent } from './components/story/ideas/ideas.component';
+import { ListIdeasComponent } from './components/story/list-ideas/list-ideas.component';
+import { IdeasFormComponent } from './components/story/ideas-form/ideas-form.component';
+import { IdeasInfoComponent } from './components/story/ideas-info/ideas-info.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +73,11 @@ import { ChapterDetailComponent } from './components/the-broken-sword/abouth-cha
     ChaptersComponent,
     ChapterAlertComponent,
     ChapterDetailComponent,
+    ChapterReadComponent,
+    IdeasComponent,
+    ListIdeasComponent,
+    IdeasFormComponent,
+    IdeasInfoComponent,
   ],
   imports: [
     BrowserModule,

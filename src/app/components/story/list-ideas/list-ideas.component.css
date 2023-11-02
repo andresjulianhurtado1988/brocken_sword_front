@@ -16,3 +16,8 @@
 .pointer:hover {
   font-size: 250%;
 }
+
+.tamanio-table {
+  width: 800px;
+  margin-left: 150px;
+}

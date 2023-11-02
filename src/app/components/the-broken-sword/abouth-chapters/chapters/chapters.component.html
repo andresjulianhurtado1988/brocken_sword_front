@@ -1,4 +1,4 @@
-<div class="container m-5">
+<div class="container">
   <div class="row">
     <div class="col-md-12">
       <form
@@ -44,15 +44,15 @@
         </div>
 
         <div class="row">
-          <label class="col-4 col-form-label">Chapter Abouth... </label>
+          <label class="col-4 col-form-label">Chapter Title...... </label>
           <label class="col-4 col-form-label">Short Description:</label>
-          <label class="col-4 col-form-label">Pages:</label>
+          <label class="col-4 col-form-label">Estimated Number of Pages:</label>
         </div>
         <div class="row">
           <mat-form-field class="col-md-4">
-            <mat-label>Chapter Abouth...</mat-label>
+            <mat-label>Chapter Title...</mat-label>
+
             <input matInput formControlName="name" autocomplete="off" />
-            <!-- <small *ngIf="nameRequired" class="text-danger">Is Required</small> -->
             <mat-error
               *ngIf="form.controls['name']?.errors?.['required'] && form.controls['name']?.touched"
             >
@@ -63,15 +63,10 @@
           <mat-form-field class="col-md-4">
             <mat-label>Short Description</mat-label>
             <textarea matInput formControlName="description"></textarea>
-            <mat-error
-              *ngIf="form.controls['description']?.errors?.['required'] && form.controls['description']?.touched"
-            >
-              Is Required
-            </mat-error>
           </mat-form-field>
 
           <mat-form-field class="col-md-2">
-            <mat-label>Pages...</mat-label>
+            <mat-label>Estimated Number of Pages...</mat-label>
             <input matInput formControlName="pages" autocomplete="off" />
             <mat-error
               *ngIf="form.controls['pages']?.errors?.['required']  && form.controls['pages']?.touched"
@@ -108,23 +103,32 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Chapter Name</th>
-            <th scope="col">number of pages</th>
-            <th scope="col">Description</th>
+            <th scope="col">Read</th>
+            <th scope="col">Add Description</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let chapters of chaptersByCharacter; let i = index">
             <td>{{ i + 1 }}</td>
             <td>{{ chapters.name }}</td>
-            <td>{{ chapters.pages }}</td>
             <td>
-              <button
+              <mat-icon
+                mat-button
+                color="primary"
+                (click)="openDialogChapterRead(chapters.id)"
+                class="pointer"
+              >
+                import_contacts</mat-icon
+              >
+            </td>
+            <td>
+              <mat-icon
                 mat-button
                 color="primary"
                 (click)="openDialogChapterDetail(chapters.id)"
+                class="pointer"
+                >fiber_new</mat-icon
               >
-                <strong>Chapter Detail</strong>
-              </button>
             </td>
           </tr>
         </tbody>

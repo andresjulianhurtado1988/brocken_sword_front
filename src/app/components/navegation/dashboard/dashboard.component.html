@@ -34,14 +34,9 @@
             <img mat-card-image src="{{ card.image }}" class="imagen-size" />
           </div>
 
-          <ng-template #other_content
-            ><p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos,
-              laudantium iure. Ab, delectus ad veritatis deserunt incidunt
-              dolorum eos, pariatur rerum rem nihil doloremque? Unde id vero
-              esse tempore repellat.
-            </p></ng-template
-          >
+          <ng-template #other_content>
+          {{ card.content }}
+          </ng-template>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

@@ -53,7 +53,7 @@ export class CharacterDetailComponent {
     reader.readAsDataURL(file);
     reader.onload = () => {
       this.prevImage = reader.result;
-      console.log(this.prevImage);
+     
     };
   }
 
@@ -65,7 +65,7 @@ export class CharacterDetailComponent {
     fd.append('id_chacaracter', this.character_id);
 
     this._characterService.registerCharacterImage(fd).subscribe((resp) => {
-      console.log(resp);
+     
     });
   }
 }

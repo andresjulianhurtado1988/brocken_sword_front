@@ -1,12 +1,14 @@
 <div class="container">
-  <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile
-      class="back-ground-img-blue"
-      *ngFor="let books of AllBooksNames"
-    >
-      <a mat-button [routerLink]="['/chapters', books.id]">
-        <strong class="color-strong pointer">{{ books.name }}</strong>
-      </a></mat-grid-tile
-    >
-  </mat-grid-list>
+  <div class="row">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile
+        class="back-ground-img-blue"
+        *ngFor="let books of AllBooksNames"
+      >
+        <a mat-button [routerLink]="['/chapters', books.id]">
+          <strong class="color-strong pointer">{{ books.name }}</strong>
+        </a></mat-grid-tile
+      >
+    </mat-grid-list>
+  </div>
 </div>

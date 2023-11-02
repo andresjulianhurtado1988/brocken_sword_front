@@ -30,13 +30,13 @@ export class DialogReligionComponent {
       this._religionService.getJudge(order_id).subscribe((datos) => {
         this.label_text = "Judges";
         this.data = datos.info;
-        console.log(this.data, 'opcion uno');
+       
       });
     } else {
       this._religionService.getDeity(order_id).subscribe((datos) => {
         this.label_text = "Deitys";
         this.data = datos.info;
-        console.log(this.data, 'opcion dos');
+       
       });
     }
   }

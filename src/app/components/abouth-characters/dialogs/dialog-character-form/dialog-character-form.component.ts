@@ -92,7 +92,6 @@ export class DialogCharacterFormComponent {
   onSubmit(form: any) {
     this._characterService.registerCharacter(this.newCharacter).subscribe(
       (response) => {
-        console.log(this.newCharacter);
         if (response.status == 'success') {
           this.status = response.status;
           this.dialogRef.close();
@@ -102,7 +101,6 @@ export class DialogCharacterFormComponent {
       },
       (error) => {
         this.status = 'error';
-        console.log(<any>error);
       }
     );
   }

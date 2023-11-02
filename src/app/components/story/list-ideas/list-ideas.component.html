@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row m-5">
+    <button class="btn btn-outline-primary" (click)="openDialogFormIdea()">
+      New Idea
+    </button>
+  </div>
+  <hr />
+  <div class="row m-5">
+    <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
+      <table class="table tamanio-table">
+        <thead>
+          <tr>
+            <th scope="col">Idea Abouth...</th>
+            <th scope="col">Cant Ideas</th>
+            <th scope="col">Read Ideas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let id of ideas">
+            <td>{{ id.description }}</td>
+            <td>{{ id.cant_ideas }}</td>
+            <td>
+              <mat-icon mat-button color="primary" class="pointer" (click)="allIdeas(id.theme_id)">
+                import_contacts</mat-icon
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>

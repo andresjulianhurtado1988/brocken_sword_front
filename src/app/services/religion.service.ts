@@ -13,8 +13,8 @@ export class ReligionService {
     this.url = global_url.url;
   }
 
-  getReligion(): Observable<any> {
-    return this._http.get(this.url + 'religion/getReligion', {
+  getAllJudges(): Observable<any> {
+    return this._http.get(this.url + 'religion/getAllJudges', {
       headers: new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded',
       }),
@@ -31,6 +31,14 @@ export class ReligionService {
 
   getDeity(id: any): Observable<any> {
     return this._http.get(this.url + 'religion/getDeity/' + id, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+
+  getOrders(): Observable<any> {
+    return this._http.get(this.url + 'religion/getOrders', {
       headers: new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded',
       }),

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { WorldService } from 'src/app/services/world.service';
 import { Router, Params, ActivatedRoute } from '@angular/router';
-import { ChapterAlertComponent } from '../info/chapter-alert/chapter-alert.component';
+import { ChapterAlertComponent } from '../chapter-alert/chapter-alert.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { ChapterDetailComponent } from '../info/chapter-detail/chapter-detail.component';
+import { ChapterDetailComponent } from '../chapter-detail/chapter-detail.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ChapterReadComponent } from '../info/chapter-read/chapter-read.component';
+import { ChapterReadComponent } from '../chapter-read/chapter-read.component';
 
 @Component({
   selector: 'app-chapters',

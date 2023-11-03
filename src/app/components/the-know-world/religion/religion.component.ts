@@ -19,8 +19,8 @@ export class ReligionComponent {
   }
 
   ngOnInit(): void {
-    this._religionService.getReligion().subscribe((resp) => {
-      this.orders = resp.religion;
+    this._religionService.getOrders().subscribe((resp) => {
+      this.orders = resp.orders;
     });
   }
 

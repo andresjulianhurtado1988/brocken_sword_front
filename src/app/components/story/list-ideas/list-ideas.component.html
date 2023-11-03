@@ -1,11 +1,75 @@
 <div class="container">
-  <div class="row m-5">
-    <button class="btn btn-outline-primary" (click)="openDialogFormIdea()">
-      New Idea
-    </button>
+  <div class="row">
+    <form
+      action=""
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+      novalidate
+      autocomplete="off"
+    >
+      <div class="row">
+        <mat-form-field class="all-space-input col-md-6">
+          <mat-label>Abouth</mat-label>
+          <mat-select formControlName="themes_id" cdkFocusInitial>
+            <mat-option
+              *ngFor="let theme of initIdeas.aboutThemes"
+              [value]="theme.id"
+              (click)="selectedTheme(theme.id)"
+            >
+              {{ theme.description }}</mat-option
+            >
+          </mat-select>
+          <mat-error
+            *ngIf="form.controls['themes_id']?.errors?.['required'] && form.controls['themes_id']?.touched"
+          >
+            Is Required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="all-space-input col-md-6">
+          <mat-label>Chose</mat-label>
+          <mat-select formControlName="abouth_id" cdkFocusInitial>
+            <mat-option
+              *ngFor="let data of initIdeas.allData"
+              [value]="data.id"
+              [disabled]="initIdeas.selectedOption"
+            >
+              {{ data.name }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-6">
+          <textarea
+            class="form-control tamanio-text-area"
+            placeholder="Description"
+            formControlName="description"
+          ></textarea>
+          <mat-error
+            *ngIf="form.controls['description']?.errors?.['required'] && form.controls['description']?.touched"
+          >
+            Is Required
+          </mat-error>
+        </div>
+      </div>
+    </form>
+    <hr />
+    <div class="row">
+      <button
+        type="button"
+        class="btn btn-outline-success mt-3 mb-5 btn-block"
+        (click)="onSubmit()"
+        [disabled]="form.invalid"
+      >
+        <strong>Save</strong>
+      </button>
+    </div>
   </div>
+
   <hr />
-  <div class="row m-5">
+  <div class="row">
     <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
       <table class="table tamanio-table">
         <thead>
@@ -13,14 +77,30 @@
             <th scope="col">Idea Abouth...</th>
             <th scope="col">Cant Ideas</th>
             <th scope="col">Read Ideas</th>
+            <th scope="col">Prueba</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let id of ideas">
+          <tr *ngFor="let id of initIdeas.ideas">
             <td>{{ id.description }}</td>
             <td>{{ id.cant_ideas }}</td>
             <td>
-              <mat-icon mat-button color="primary" class="pointer" (click)="allIdeas(id.theme_id)">
+              <mat-icon
+                mat-button
+                color="primary"
+                class="pointer"
+                (click)="allIdeas(id.theme_id)"
+              >
+                import_contacts</mat-icon
+              >
+            </td>
+            <td>
+              <mat-icon
+                mat-button
+                color="primary"
+                class="pointer"
+                (click)="pdfIdeas(id.theme_id)"
+              >
                 import_contacts</mat-icon
               >
             </td>

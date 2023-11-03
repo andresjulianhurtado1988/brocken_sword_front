@@ -1,1 +1,12 @@
-<p>ideas works!</p>
+<div class="container">
+  <mat-dialog-content class="mat-typography" *ngFor="let id of ideas">
+    <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
+      <p>{{ id.description_idea }}</p>
+    </cdk-virtual-scroll-viewport>
+    <hr />
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>

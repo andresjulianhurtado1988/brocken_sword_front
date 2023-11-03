@@ -20,8 +20,16 @@ export class IdeasService {
     });
   }
 
-  getIdeas(): Observable<any> {
-    return this._http.get(this.url + 'ideas/getIdeas', {
+  getAllIdeas(): Observable<any> {
+    return this._http.get(this.url + 'ideas/getAllIdeas', {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+
+  getIdeas(theme_id: any): Observable<any> {
+    return this._http.get(this.url + 'ideas/getIdeas/' + theme_id, {
       headers: new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded',
       }),
@@ -33,6 +41,14 @@ export class IdeasService {
     let params = 'json=' + json;
 
     return this._http.post(this.url + 'ideas/createIdea', params, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+
+  pdfIdeas(theme_id: any): Observable<any> {
+    return this._http.get(this.url + 'ideas/pdfIdeas/' + theme_id, {
       headers: new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded',
       }),

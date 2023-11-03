@@ -40,6 +40,14 @@ export class CharacterService {
     });
   }
 
+  getAllCharacters(): Observable<any> {
+    return this._http.get(this.url + 'characters/getAllCharacters', {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+
   registerCharacterImage(fileCharacter: any): Observable<any> {
     return this._http.post(
       this.url + 'characters/registerCharacterImage',
@@ -47,5 +55,11 @@ export class CharacterService {
     );
   }
 
-
+  getProtagonist(): Observable<any> {
+    return this._http.get(this.url + 'characters/getProtagonist', {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
 }

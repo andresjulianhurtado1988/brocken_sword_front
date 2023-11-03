@@ -35,12 +35,11 @@ import { CharacterAlertComponent } from './components/abouth-characters/alerts/c
 import { TheAncientHallowsComponent } from './components/the-know-world/the-ancient-hallows/the-ancient-hallows.component';
 import { TheLordOfTheGraveComponent } from './components/the-know-world/the-lord-of-the-grave/the-lord-of-the-grave.component';
 import { ChaptersComponent } from './components/the-broken-sword/abouth-chapters/chapters/chapters.component';
-import { ChapterAlertComponent } from './components/the-broken-sword/abouth-chapters/info/chapter-alert/chapter-alert.component';
-import { ChapterDetailComponent } from './components/the-broken-sword/abouth-chapters/info/chapter-detail/chapter-detail.component';
-import { ChapterReadComponent } from './components/the-broken-sword/abouth-chapters/info/chapter-read/chapter-read.component';
+import { ChapterAlertComponent } from './components/the-broken-sword/abouth-chapters/chapter-alert/chapter-alert.component';
+import { ChapterDetailComponent } from './components/the-broken-sword/abouth-chapters/chapter-detail/chapter-detail.component';
+import { ChapterReadComponent } from './components/the-broken-sword/abouth-chapters/chapter-read/chapter-read.component';
 import { IdeasComponent } from './components/story/ideas/ideas.component';
 import { ListIdeasComponent } from './components/story/list-ideas/list-ideas.component';
-import { IdeasFormComponent } from './components/story/ideas-form/ideas-form.component';
 import { IdeasInfoComponent } from './components/story/ideas-info/ideas-info.component';
 
 @NgModule({
@@ -76,7 +75,6 @@ import { IdeasInfoComponent } from './components/story/ideas-info/ideas-info.com
     ChapterReadComponent,
     IdeasComponent,
     ListIdeasComponent,
-    IdeasFormComponent,
     IdeasInfoComponent,
   ],
   imports: [

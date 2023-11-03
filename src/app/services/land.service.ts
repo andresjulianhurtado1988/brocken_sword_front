@@ -12,7 +12,7 @@ export class LandService {
   }
 
   getLands(): Observable<any> {
-    return this._http.get(this.url + 'world/getLands', {
+    return this._http.get(this.url + 'land/getLands', {
       headers: new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded',
       }),
@@ -20,7 +20,7 @@ export class LandService {
   }
 
   showLand(id: any): Observable<any> {
-    return this._http.get(this.url + 'world/showLand/' + id, {
+    return this._http.get(this.url + 'land/showLand/' + id, {
       headers: new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded',
       }),

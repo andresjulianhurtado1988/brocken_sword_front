@@ -1,5 +1,5 @@
 .example-viewport {
-  height: 220px;
+  height: 400px;
   width: 3100px;
 }
 
@@ -18,6 +18,11 @@
 }
 
 .tamanio-table {
-  width: 800px;
-  margin-left: 150px;
+  width: 900px;
+  /* height: 4000px; */
+  margin-left: 50px;
+}
+.tamanio-text-area {
+  width: 1125px;
+  height: 100px;
 }

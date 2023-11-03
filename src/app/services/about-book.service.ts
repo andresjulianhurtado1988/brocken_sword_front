@@ -13,14 +13,6 @@ export class AboutBookService {
     this.url = global_url.url;
   }
 
-  getProtagonist(): Observable<any> {
-    return this._http.get(this.url + 'world/getProtagonist', {
-      headers: new HttpHeaders({
-        'Content-type': 'application/x-www-form-urlencoded',
-      }),
-    });
-  }
-
   getBooks(): Observable<any> {
     return this._http.get(this.url + 'world/getBooks', {
       headers: new HttpHeaders({

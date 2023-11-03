@@ -19,6 +19,14 @@ export class LandService {
     });
   }
 
+  getAllLands(): Observable<any> {
+    return this._http.get(this.url + 'land/getAllLands', {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+
   showLand(id: any): Observable<any> {
     return this._http.get(this.url + 'land/showLand/' + id, {
       headers: new HttpHeaders({

@@ -116,11 +116,11 @@ export class ListIdeasComponent {
         break;
       case 4:
         this.initIdeas.selectedOption = false;
-        this.landService.getLands().subscribe((resp) => {
+        this.landService.getAllLands().subscribe((resp) => {
           resp.lands.forEach((datos: any) => {
             this.initIdeas.allData.push({
               ['id']: datos['id'],
-              ['name']: datos['land_name'],
+              ['name']: datos['name'],
             });
           });
           console.log(this.initIdeas.allData);

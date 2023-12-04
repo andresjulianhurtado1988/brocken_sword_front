@@ -38,9 +38,10 @@ import { ChaptersComponent } from './components/the-broken-sword/abouth-chapters
 import { ChapterAlertComponent } from './components/the-broken-sword/abouth-chapters/chapter-alert/chapter-alert.component';
 import { ChapterDetailComponent } from './components/the-broken-sword/abouth-chapters/chapter-detail/chapter-detail.component';
 import { ChapterReadComponent } from './components/the-broken-sword/abouth-chapters/chapter-read/chapter-read.component';
-import { IdeasComponent } from './components/story/ideas/ideas.component';
+import { IdeasComponent } from './components/story/read-ideas/ideas.component';
 import { ListIdeasComponent } from './components/story/list-ideas/list-ideas.component';
-import { IdeasInfoComponent } from './components/story/ideas-info/ideas-info.component';
+import { IdeasInfoComponent } from './components/story/info-ideas/ideas-info.component';
+import { FormIdeasComponent } from './components/story/form-ideas/form-ideas.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { IdeasInfoComponent } from './components/story/ideas-info/ideas-info.com
     IdeasComponent,
     ListIdeasComponent,
     IdeasInfoComponent,
+    FormIdeasComponent,
   ],
   imports: [
     BrowserModule,

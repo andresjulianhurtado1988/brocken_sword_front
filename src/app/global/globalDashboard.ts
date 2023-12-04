@@ -9,7 +9,7 @@ export var dashboardData = {
       image: '',
       array_options: [
         {
-          routes: '/list-ideas',
+          routes: '/form-ideas',
           options: 'Ideas',
         },
       ],

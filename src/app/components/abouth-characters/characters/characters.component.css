@@ -22,15 +22,17 @@
   margin-left: 125px;
   width: 200px;
   height: 200px;
-  border-radius: 100%;
+  border-radius: 50%;
   object-fit: cover;
 }
 
 .list-image {
-  width: 185px;
-  height: 185px;
   margin-left: 30px;
   border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  object-fit: cover;
 }
 
 .no-border {

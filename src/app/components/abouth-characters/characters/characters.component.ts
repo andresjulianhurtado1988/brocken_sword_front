@@ -20,7 +20,7 @@ export class CharactersComponent {
   public url: any;
   public prevImage: any;
   public noImage: string;
-
+  public inavilityButton: boolean = true;
   public selectedFile!: File;
   public durationInSeconds = 5;
 
@@ -43,38 +43,57 @@ export class CharactersComponent {
   }
 
   getCharacters() {
-    this._characterService.getCharacters().subscribe(
-      (response) => {
-        if (response.status == 'success') {
-          this.characters = response.characters;
-          this.prevImage = null;
-          
-        } else {
-          this.status = 'error';
-        }
-      },
-      (error) => {
-        this.status = 'error';
-      }
-    );
+    this._characterService.getCharacters().subscribe((response) => {
+      this.characters = response.characters;
+      this.prevImage = null;
+    });
   }
 
   showCharacter(id_character: number) {
+    this.inavilityButton = true;
     this.id_character = id_character;
 
-    this._characterService.showCharacter(id_character).subscribe(
-      (response) => {
-        if (response.status == 'success') {
-          this.the_character = response.characters;
-        } else {
-          this.status = 'error';
-        }
-      },
-      (error) => {
+    this._characterService.showCharacter(id_character).subscribe((response) => {
+      this.the_character = response.characters;
+    });
+    this.prevImage = null;
+  }
+
+  cargarImagen(event: any) {
+    this.inavilityButton = false;
+    this.selectedFile = <File>event.target.files[0];
+    let file = event.target.files[0];
+
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.prevImage = reader.result;
+    };
+  }
+
+  enviarImagen(id: string) {
+    let fd = new FormData();
+
+    fd.append('image', this.selectedFile, this.selectedFile.name);
+    fd.append('id_chacaracter', id);
+
+    this._characterService.registerCharacterImage(fd).subscribe((resp) => {
+      if (resp.status == 'success') {
+        this.status = resp.status;
+
+        this.openSnackBar();
+        this.showCharacter(this.id_character);
+        this.getCharacters();
+      } else {
         this.status = 'error';
       }
-    );
-    this.prevImage = null;
+    });
+  }
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(CharacterAlertComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
   }
 
   openDialogFormCharacter() {
@@ -88,41 +107,6 @@ export class CharactersComponent {
           data_character: response.characters,
         },
       });
-    });
-  }
-
-  cargarImagen(event: any) {
-    this.selectedFile = <File>event.target.files[0];
-    const file = event.target.files[0];
-
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      this.prevImage = reader.result;
-    };
-  }
-
-  enviarImagen(id: string) {
-    const fd = new FormData();
-
-    fd.append('image', this.selectedFile, this.selectedFile.name);
-    fd.append('id_chacaracter', id);
-
-    this._characterService.registerCharacterImage(fd).subscribe((resp) => {
-      if (resp.status == 'success') {
-        this.status = resp.status;
-        this.openSnackBar();
-        this.showCharacter(this.id_character);
-        this.getCharacters();
-      } else {
-        this.status = 'error';
-      }
-    });
-  }
-
-  openSnackBar() {
-    this._snackBar.openFromComponent(CharacterAlertComponent, {
-      duration: this.durationInSeconds * 1000,
     });
   }
 }

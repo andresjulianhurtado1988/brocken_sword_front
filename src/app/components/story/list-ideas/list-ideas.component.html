@@ -1,18 +1,20 @@
 <div class="row">
   <cdk-virtual-scroll-viewport itemSize="6" class="example-viewport">
-    <table class="table tamanio-table">
+    <table class="table tamanio-table" style="margin-left: 120px">
       <thead>
         <tr>
           <th scope="col">Idea Abouth...</th>
-          <th scope="col">Cant Ideas</th>
           <th scope="col">Read Ideas</th>
-          <th scope="col">Prueba</th>
+          <th scope="col">Read</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let id of ideas">
-          <td>{{ id.description }}</td>
-          <td>{{ id.cant_ideas }}</td>
+          <td>
+            <p matBadge="{{ id.cant_ideas }}" matBadgeOverlap="false">
+              {{ id.description }}
+            </p>
+          </td>
           <td>
             <mat-icon
               mat-button

@@ -22,8 +22,8 @@ export var dashboardData = {
       image: '',
       array_options: [
         {
-          routes: '',
-          options: 'Hello World',
+          routes: '/padre',
+          options: 'pruebas',
         },
       ],
     },
@@ -54,6 +54,10 @@ export var dashboardData = {
         {
           routes: '/races',
           options: 'Races',
+        },
+        {
+          routes: '/creatures',
+          options: 'Creatures',
         },
       ],
     },

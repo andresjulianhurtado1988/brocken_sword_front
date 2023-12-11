@@ -1,0 +1,52 @@
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+
+  <mat-label>Favorite Animal</mat-label>
+
+  <form #imageForm="ngForm">
+    <div class="row">
+      <div class="form-group col-md-12">
+        <input
+          class="form-control"
+          type="file"
+          placeholder="Nombre"
+          name="image"
+          (change)="cargarImagen($event)"
+          [(ngModel)]="data.animal"
+        />
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          matInput
+          [(ngModel)]="data.name"
+        />
+        <input
+          type="text"
+          name="exito"
+          class="form-control"
+          [(ngModel)]="data.exito"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-12input-group col">
+        <button
+          type="button"
+          class="btn btn-outline-primary btn-block"
+          (click)="enviarImagen('1')"
+          mat-button
+          [mat-dialog-close]="data"
+        >
+          Upload Image
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- <input matInput [(ngModel)]="data.animal"> -->
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <!-- <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button> -->
+</div>

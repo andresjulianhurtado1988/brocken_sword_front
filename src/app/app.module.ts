@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoImagePipe } from './pipes/no-image.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { NgOptimizedImage } from '@angular/common';
+
 // COMPONENTES
 import { NavegacionComponent } from './components/navegation/navegacion/navegacion.component';
 import { DashboardComponent } from './components/navegation/dashboard/dashboard.component';
@@ -42,6 +44,14 @@ import { IdeasComponent } from './components/story/read-ideas/ideas.component';
 import { ListIdeasComponent } from './components/story/list-ideas/list-ideas.component';
 import { IdeasInfoComponent } from './components/story/info-ideas/ideas-info.component';
 import { FormIdeasComponent } from './components/story/form-ideas/form-ideas.component';
+import { CreaturesComponent } from './components/the-know-world/creatures/creatures/creatures.component';
+import { CreaturesFormComponent } from './components/the-know-world/creatures/creatures-form/creatures-form.component';
+import { CreaturesImgFormComponent } from './components/the-know-world/creatures/creatures-img-form/creatures-img-form.component';
+import { CreaturesAlertComponent } from './components/the-know-world/creatures/creatures-alert/creatures-alert.component';
+import { CreaturesUpdateComponent } from './components/the-know-world/creatures/creatures-update/creatures-update.component';
+import { CreaturesImgGaleryComponent } from './components/the-know-world/creatures/creatures-img-galery/creatures-img-galery.component';
+import { ComponentePadreComponent } from './components/componentes-prueba/componente-padre/componente-padre.component';
+import { ComponenteHijoComponent } from './components/componentes-prueba/componente-hijo/componente-hijo.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +88,14 @@ import { FormIdeasComponent } from './components/story/form-ideas/form-ideas.com
     ListIdeasComponent,
     IdeasInfoComponent,
     FormIdeasComponent,
+    CreaturesComponent,
+    CreaturesFormComponent,
+    CreaturesImgFormComponent,
+    CreaturesAlertComponent,
+    CreaturesUpdateComponent,
+    CreaturesImgGaleryComponent,
+    ComponentePadreComponent,
+    ComponenteHijoComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,6 +105,7 @@ import { FormIdeasComponent } from './components/story/form-ideas/form-ideas.com
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgOptimizedImage,
     RouterModule.forRoot(ROUTES, { useHash: true }),
   ],
   providers: [],

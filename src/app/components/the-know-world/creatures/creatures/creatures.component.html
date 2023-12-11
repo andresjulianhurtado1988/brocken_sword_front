@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="example-button-row">
+      <button mat-raised-button (click)="newCreature()">New Creature</button>
+
+      <p>{{ ensayo | json }}</p>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Ex. ium"
+        #input
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="creature_name">
+        <th mat-header-cell *matHeaderCellDef>Creature Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.creature_name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>image</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon
+            mat-button
+            color="primary"
+            class="pointer"
+            (click)="openNewImageCreature(element.id)"
+            >add_to_photos</mat-icon
+          >
+          <mat-icon
+            *ngIf="element.cant_img > 0"
+            mat-button
+            color="warn"
+            class="pointer"
+            (click)="openDetailCreature(element.id)"
+            >collections</mat-icon
+          >
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="creatureColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: creatureColumns"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          No Creature Found "{{ input.value }}"
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -14,6 +14,9 @@ import { TheBrokenSwordComponent } from './components/the-broken-sword/the-broke
 import { LandsInfoComponent } from './components/abouth-lands/lands-info/lands-info.component';
 import { ChaptersComponent } from './components/the-broken-sword/abouth-chapters/chapters/chapters.component';
 import { FormIdeasComponent } from './components/story/form-ideas/form-ideas.component';
+import { CreaturesComponent } from './components/the-know-world/creatures/creatures/creatures.component';
+import { ComponentePadreComponent } from './components/componentes-prueba/componente-padre/componente-padre.component';
+import { ComponenteHijoComponent } from './components/componentes-prueba/componente-hijo/componente-hijo.component';
 
 export const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,11 +27,16 @@ export const ROUTES: Routes = [
   { path: 'detail-land/id', component: LandDetailComponent },
   { path: 'detail-character/id', component: CharacterDetailComponent },
   { path: 'religion', component: ReligionComponent },
+  { path: 'creatures', component: CreaturesComponent },
   { path: 'mystical-places', component: MysticalPlacesComponent },
   { path: 'magic-system', component: MagicSystemComponent },
   { path: 'races', component: RacesComponent },
   { path: 'the-broken-sword', component: TheBrokenSwordComponent },
   { path: 'form-ideas', component: FormIdeasComponent },
+  // rutas de componentes para probar
+  { path: 'padre', component: ComponentePadreComponent },
+  { path: 'hijo', component: ComponenteHijoComponent },
+  // fin de coimponentes para probar
   { path: 'chapters/:id', component: ChaptersComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },

@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class NavegacionComponent {
   public dashboardOptions: any[] = [];
+  public imgPerfil: string;
 
   constructor() {
     this.dashboardOptions = [
@@ -33,6 +34,7 @@ export class NavegacionComponent {
         options: 'Creatures',
       },
     ];
+    this.imgPerfil = 'assets/img/broken_sword.png';
   }
 
   private breakpointObserver = inject(BreakpointObserver);

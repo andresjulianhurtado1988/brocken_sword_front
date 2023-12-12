@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { global_url } from 'src/app/global/url_back';
 import { ThemesWorldService } from 'src/app/services/themes-world.service';
 
 @Component({
@@ -8,10 +9,12 @@ import { ThemesWorldService } from 'src/app/services/themes-world.service';
 })
 export class TheWorldComponent {
   public themesWorld: any[] = [];
-  public longText: string =
-    'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting';
+  public url: any;
+
   constructor(private _themesWorldService: ThemesWorldService) {
     this.themesWorld = [];
+    this.url = global_url.url + 'themesWorld/getThemesWorldAllImages/';
+
     this.themesWorldAll();
   }
 

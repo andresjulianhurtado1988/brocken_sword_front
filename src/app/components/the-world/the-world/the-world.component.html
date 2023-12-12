@@ -3,7 +3,12 @@
     <div class="col-md-12">
       <mat-grid-list cols="3" rowHeight="1:1">
         <mat-grid-tile *ngFor="let item of themesWorld"
-          ><mat-card class="example-card back-ground-img-blue">
+          ><mat-card
+            class="example-card back-ground-img-blue"
+            style="
+              background-image: url('{{ url }}{{ item.img_theme_world }}');
+            "
+          >
             <mat-card-header>
               <mat-card-title class="font-color">{{
                 item.theme_world_title
@@ -12,7 +17,7 @@
             <hr />
             <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
               <mat-card-content class="font-color">
-                <p>{{ item.description }}</p>
+                <span>{{ item.description }}</span>
               </mat-card-content>
             </cdk-virtual-scroll-viewport>
             <hr />

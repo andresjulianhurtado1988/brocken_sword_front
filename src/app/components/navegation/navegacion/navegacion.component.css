@@ -25,5 +25,12 @@
 .mat-button-toggle-group {
   margin-left: 12px;
   background-color: #3f51b5;
-
+}
+.mat-success {
+  color: white !important;
+}
+.img-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
 }

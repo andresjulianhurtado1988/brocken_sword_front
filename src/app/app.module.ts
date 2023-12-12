@@ -23,7 +23,7 @@ import { LandDetailComponent } from './components/abouth-lands/land-detail/land-
 import { CharacterDetailComponent } from './components/abouth-characters/character-detail/character-detail.component';
 import { HomeComponent } from './components/navegation/home/home.component';
 import { DialogLandComponent } from './components/dialogs/dialog-land/dialog-land.component';
-import { MysticalPlacesComponent } from './components/the-know-world/mystical-places/mystical-places.component';
+import { MysticalPlacesComponent } from './components/the-know-world/mystical-places/mystical-places/mystical-places.component';
 import { ReligionComponent } from './components/the-know-world/religion/religion.component';
 import { DialogCharacterComponent } from './components/abouth-characters/dialogs/dialog-character/dialog-character.component';
 import { MagicSystemComponent } from './components/the-know-world/magic-system/magic-system.component';
@@ -52,6 +52,10 @@ import { CreaturesUpdateComponent } from './components/the-know-world/creatures/
 import { CreaturesImgGaleryComponent } from './components/the-know-world/creatures/creatures-img-galery/creatures-img-galery.component';
 import { ComponentePadreComponent } from './components/componentes-prueba/componente-padre/componente-padre.component';
 import { ComponenteHijoComponent } from './components/componentes-prueba/componente-hijo/componente-hijo.component';
+import { MysticalPlacesAlertComponent } from './components/the-know-world/mystical-places/mystical-places-alert/mystical-places-alert.component';
+import { MysticalPlacesImageFormComponent } from './components/the-know-world/mystical-places/mystical-places-image-form/mystical-places-image-form.component';
+import { MysticalPlacesGalleryComponent } from './components/the-know-world/mystical-places/mystical-places-gallery/mystical-places-gallery.component';
+import { OptionsMapComponent } from './components/navegation/options-map/options-map.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +100,10 @@ import { ComponenteHijoComponent } from './components/componentes-prueba/compone
     CreaturesImgGaleryComponent,
     ComponentePadreComponent,
     ComponenteHijoComponent,
+    MysticalPlacesAlertComponent,
+    MysticalPlacesImageFormComponent,
+    MysticalPlacesGalleryComponent,
+    OptionsMapComponent,
   ],
   imports: [
     BrowserModule,

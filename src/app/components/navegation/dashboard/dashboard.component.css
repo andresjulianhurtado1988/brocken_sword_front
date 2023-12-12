@@ -16,13 +16,13 @@
   right: 10px;
 }
 
-.dashboard-card-content {
+/* .dashboard-card-content {
   text-align: center;
-}
+} */
 
 .imagen-size {
-  width: 900px;
-  height: 220px;
+  width: 1200px;
+  height: 300px;
 }
 
 .example-menu {
@@ -30,7 +30,7 @@
   flex-direction: column;
   min-width: 180px;
   max-width: 280px;
-  background-color: rgba(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   padding: 6px 0;
 }
 

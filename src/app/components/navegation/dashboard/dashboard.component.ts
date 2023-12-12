@@ -2,6 +2,8 @@ import { Component, inject } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 import { dashboardData } from 'src/app/global/globalDashboard';
+import { OptionsMapComponent } from '../options-map/options-map.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +13,7 @@ import { dashboardData } from 'src/app/global/globalDashboard';
 export class DashboardComponent {
   public dashboardData: any[] = [];
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.dashboardData = dashboardData.myDashBoard;
   }
 
@@ -23,4 +25,10 @@ export class DashboardComponent {
       return this.dashboardData;
     })
   );
+
+  openOptions(): void {
+    const dialogRef = this.dialog.open(OptionsMapComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {});
+  }
 }

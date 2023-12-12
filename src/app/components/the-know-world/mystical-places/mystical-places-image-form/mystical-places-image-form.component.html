@@ -1,0 +1,35 @@
+<mat-dialog-content class="mat-typography">
+  <mat-card *ngFor="let item of mysticalPLaceInfo">
+    <img class="image-character" [src]="prevImage ?? noImage" />
+
+    <form #imageForm="ngForm">
+      <div class="row">
+        <div class="form-group col-md-12">
+          <input
+            class="form-control"
+            type="file"
+            placeholder="Nombre"
+            name="image"
+            (change)="cargarImagen($event)"
+            [(ngModel)]="data.animal"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-12input-group col">
+          <button
+            type="button"
+            class="btn btn-outline-primary btn-block"
+            (click)="enviarImagen(item.id)"
+            [mat-dialog-close]="data"
+          >
+            Save Image
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

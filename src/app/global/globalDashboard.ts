@@ -27,39 +27,27 @@ export var dashboardData = {
         },
       ],
     },
-    {
-      title: 'The Known World',
-      cols: 2,
-      rows: 1,
-      content: 'hola mundo',
-      image:
-        'https:e1.pxfuel.com/desktop-wallpaper/386/1008/desktop-wallpaper-pangea-breakup-and-continental-drift-physical-puzzle-pangea.jpg',
-      array_options: [
-        {
-          routes: '/world',
-          options: 'The World',
-        },
-        {
-          routes: '/mystical-places',
-          options: 'Mystical Places',
-        },
-        {
-          routes: '/magic-system',
-          options: 'Magic System',
-        },
-        {
-          routes: '/religion',
-          options: 'The Orders (Religion)',
-        },
-        {
-          routes: '/races',
-          options: 'Races',
-        },
-        {
-          routes: '/creatures',
-          options: 'Creatures',
-        },
-      ],
-    },
+    // {
+    //   title: 'Card number 3',
+    //   cols: 2,
+    //   rows: 1,
+    //   content: '',
+    //   image:
+    //     'assets/img/gheboren.jpeg',
+    //   array_options: [
+    //     {
+    //       routes: '/lands',
+    //       options: 'The Lands',
+    //     },
+    //     {
+    //       routes: '/mystical-places',
+    //       options: 'Mystical Places',
+    //     },
+    //     {
+    //       routes: '/world',
+    //       options: 'The World',
+    //     },
+    //   ],
+    // },
   ],
 };

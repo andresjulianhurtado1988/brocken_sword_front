@@ -6,11 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./the-world.component.css'],
 })
 export class TheWorldComponent {
-  public hidden: boolean = false;
-  public valorPrueba: number = 16;
-  constructor() {}
 
-  ocultar() {
-    this.hidden = !this.hidden;
-  }
 }

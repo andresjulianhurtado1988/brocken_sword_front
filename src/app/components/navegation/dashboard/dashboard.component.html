@@ -30,15 +30,16 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div *ngIf="card.image; else other_content">
-            <img mat-card-image src="{{ card.image }}" class="imagen-size" />
-          </div>
-
-          <ng-template #other_content>
           {{ card.content }}
-          </ng-template>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <button style="margin-left: 70px; border: none" (click)="openOptions()">
+      <img src="assets/img/gheboren.jpeg" alt="" class="imagen-size" />
+    </button>
+  </div>
 </div>

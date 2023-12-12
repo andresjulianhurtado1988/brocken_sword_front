@@ -7,7 +7,7 @@ import { TheWorldComponent } from './components/the-know-world/the-world/the-wor
 import { LandDetailComponent } from './components/abouth-lands/land-detail/land-detail.component';
 import { CharacterDetailComponent } from './components/abouth-characters/character-detail/character-detail.component';
 import { ReligionComponent } from './components/the-know-world/religion/religion.component';
-import { MysticalPlacesComponent } from './components/the-know-world/mystical-places/mystical-places.component';
+import { MysticalPlacesComponent } from './components/the-know-world/mystical-places/mystical-places/mystical-places.component';
 import { MagicSystemComponent } from './components/the-know-world/magic-system/magic-system.component';
 import { RacesComponent } from './components/the-know-world/races/races.component';
 import { TheBrokenSwordComponent } from './components/the-broken-sword/the-broken-sword/the-broken-sword.component';

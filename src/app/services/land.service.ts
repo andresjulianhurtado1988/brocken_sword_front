@@ -34,4 +34,58 @@ export class LandService {
       }),
     });
   }
+
+  registerMysticalLandImage(fileLand: any): Observable<any> {
+    return this._http.post(
+      this.url + 'land/registerMysticalLandImage',
+      fileLand
+    );
+  }
+
+  getAllMysticalPlaces(): Observable<any> {
+    return this._http.get(this.url + 'land/getAllMysticalPlaces', {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+
+  getMysticalPlace(mystical_place_id: number): Observable<any> {
+    return this._http.get(
+      this.url + 'land/getMysticalPlace/' + mystical_place_id,
+      {
+        headers: new HttpHeaders({
+          'Content-type': 'application/x-www-form-urlencoded',
+        }),
+      }
+    );
+  }
+
+  registerMysticalPlace(mystical_place: any): Observable<any> {
+    let json = JSON.stringify(mystical_place);
+    let params = 'json=' + json;
+
+    return this._http.post(this.url + 'land/registerMysticalPlace', params, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+  registerMysticalPlaceImage(fileMysticalPlace: any): Observable<any> {
+    return this._http.post(
+      this.url + 'land/registerMysticalPlaceImage',
+      fileMysticalPlace
+    );
+  }
+
+  getMysticalPlaceAllImages(mystical_place_id: number): Observable<any> {
+    return this._http.get(
+      this.url + 'land/getMysticalPlaceAllImages/' + mystical_place_id,
+      {
+        headers: new HttpHeaders({
+          'Content-type': 'application/x-www-form-urlencoded',
+        }),
+      }
+    );
+  }
 }

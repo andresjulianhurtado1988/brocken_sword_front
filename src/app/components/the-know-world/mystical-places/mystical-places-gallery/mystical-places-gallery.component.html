@@ -1,0 +1,16 @@
+<mat-dialog-content class="mat-typography" style="width: 1000px; height: 1000px"
+  ><cdk-virtual-scroll-viewport itemSize="5" class="example-viewport">
+    <mat-grid-list cols="3" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let item of mysticalPlaceImg">
+        <img
+          style="position: relative"
+          [ngSrc]="url + 'land/getMysticalPlaceImage/' + item.img_mystical_place"
+          fill
+        />
+      </mat-grid-tile>
+    </mat-grid-list>
+  </cdk-virtual-scroll-viewport>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

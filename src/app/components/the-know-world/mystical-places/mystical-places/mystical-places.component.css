@@ -1,0 +1,38 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.example-viewport {
+  height: 250px;
+}
+
+td {
+  padding-right: 8px;
+}
+.image-mystical-place {
+  width: 350px;
+  height: 150px;
+  margin-left: 110px;
+  position: relative;
+}
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.pointer {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+.pointer:hover {
+  font-size: 250%;
+}

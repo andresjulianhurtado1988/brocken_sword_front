@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { IdeasService } from 'src/app/services/ideas.service';
 import { IdeasInfoComponent } from '../info-ideas/ideas-info.component';
@@ -11,7 +10,6 @@ import { ReligionService } from 'src/app/services/religion.service';
 import { LandService } from 'src/app/services/land.service';
 import { AboutBookService } from 'src/app/services/about-book.service';
 import { Ideas } from 'src/app/models/ideas';
-import { IdeasComponent } from '../read-ideas/ideas.component';
 import { global_url } from 'src/app/global/url_back';
 
 @Component({

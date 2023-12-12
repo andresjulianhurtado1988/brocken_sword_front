@@ -1,9 +1,8 @@
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomeComponent } from './components/navegation/home/home.component';
 import { AboutAuthorComponent } from './components/abouth-author/about-author.component';
 import { CharactersComponent } from './components/abouth-characters/characters/characters.component';
-import { TheLandsComponent } from './components/abouth-lands/the-lands/the-lands.component';
-import { TheWorldComponent } from './components/the-know-world/the-world/the-world.component';
+import { TheWorldComponent } from './components/the-world/the-world/the-world.component';
 import { LandDetailComponent } from './components/abouth-lands/land-detail/land-detail.component';
 import { CharacterDetailComponent } from './components/abouth-characters/character-detail/character-detail.component';
 import { ReligionComponent } from './components/the-know-world/religion/religion.component';

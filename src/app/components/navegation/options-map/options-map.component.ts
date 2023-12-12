@@ -17,10 +17,6 @@ export class OptionsMapComponent {
         routes: '/mystical-places',
         options: 'Mystical Places',
       },
-      {
-        routes: '/world',
-        options: 'The World',
-      },
     ];
   }
 }

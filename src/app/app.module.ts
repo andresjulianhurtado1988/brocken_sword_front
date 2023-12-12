@@ -9,13 +9,11 @@ import { MaterialModule } from './modules/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NoImagePipe } from './pipes/no-image.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { NgOptimizedImage } from '@angular/common';
 
 // COMPONENTES
 import { NavegacionComponent } from './components/navegation/navegacion/navegacion.component';
 import { DashboardComponent } from './components/navegation/dashboard/dashboard.component';
-import { TheWorldComponent } from './components/the-know-world/the-world/the-world.component';
 import { CharactersComponent } from './components/abouth-characters/characters/characters.component';
 import { AboutAuthorComponent } from './components/abouth-author/about-author.component';
 import { TheLandsComponent } from './components/abouth-lands/the-lands/the-lands.component';
@@ -34,8 +32,6 @@ import { LandsFormComponent } from './components/abouth-lands/lands-form/lands-f
 import { LandsInfoComponent } from './components/abouth-lands/lands-info/lands-info.component';
 import { DialogCharacterFormComponent } from './components/abouth-characters/dialogs/dialog-character-form/dialog-character-form.component';
 import { CharacterAlertComponent } from './components/abouth-characters/alerts/character-alert/character-alert.component';
-import { TheAncientHallowsComponent } from './components/the-know-world/the-ancient-hallows/the-ancient-hallows.component';
-import { TheLordOfTheGraveComponent } from './components/the-know-world/the-lord-of-the-grave/the-lord-of-the-grave.component';
 import { ChaptersComponent } from './components/the-broken-sword/abouth-chapters/chapters/chapters.component';
 import { ChapterAlertComponent } from './components/the-broken-sword/abouth-chapters/chapter-alert/chapter-alert.component';
 import { ChapterDetailComponent } from './components/the-broken-sword/abouth-chapters/chapter-detail/chapter-detail.component';
@@ -56,6 +52,26 @@ import { MysticalPlacesAlertComponent } from './components/the-know-world/mystic
 import { MysticalPlacesImageFormComponent } from './components/the-know-world/mystical-places/mystical-places-image-form/mystical-places-image-form.component';
 import { MysticalPlacesGalleryComponent } from './components/the-know-world/mystical-places/mystical-places-gallery/mystical-places-gallery.component';
 import { OptionsMapComponent } from './components/navegation/options-map/options-map.component';
+import { TheWorldComponent } from './components/the-world/the-world/the-world.component';
+import { TheAncientHallowsComponent } from './components/the-world/the-ancient-hallows/the-ancient-hallows.component';
+import { TheLordOfTheGraveComponent } from './components/the-world/the-lord-of-the-grave/the-lord-of-the-grave.component';
+import { TheConflictComponent } from './components/the-world/the-conflict/the-conflict.component';
+import { TheClansComponent } from './components/the-world/the-clans/the-clans.component';
+import { TheBridgesComponent } from './components/the-world/the-bridges/the-bridges.component';
+
+import { TheEternalStormInTheSeaComponent } from './components/the-world/the-eternal-storm-in-the-sea/the-eternal-storm-in-the-sea.component';
+import { TheNaventiComponent } from './components/the-world/the-naventi/the-naventi.component';
+import { KaltherComponent } from './components/the-world/the-continents/kalther/kalther.component';
+import { OstiriaComponent } from './components/the-world/the-continents/ostiria/ostiria.component';
+import { VergginesComponent } from './components/the-world/the-continents/verggines/verggines.component';
+import { GebietComponent } from './components/the-world/the-continents/gebiet/gebiet.component';
+import { TheRedMirrorsComponent } from './components/the-world/the-red-mirrors/the-red-mirrors.component';
+import { ThePrisonForImmortalsComponent } from './components/the-world/the-prison-for-immortals/the-prison-for-immortals.component';
+import { TheCultureComponent } from './components/the-world/the-culture/the-culture.component';
+import { TheCurrencySystemComponent } from './components/the-world/the-currency-system/the-currency-system.component';
+import { ThePoliticalSystemComponent } from './components/the-world/the-political-system/the-political-system.component';
+import { TheCurseOfMerakComponent } from './components/the-world/the-curse-of-merak/the-curse-of-merak.component';
+import { TheTanabraWorldComponent } from './components/the-world/the-tanabra-world/the-tanabra-world.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +120,22 @@ import { OptionsMapComponent } from './components/navegation/options-map/options
     MysticalPlacesImageFormComponent,
     MysticalPlacesGalleryComponent,
     OptionsMapComponent,
+    TheConflictComponent,
+    TheClansComponent,
+    TheBridgesComponent,
+    TheEternalStormInTheSeaComponent,
+    TheNaventiComponent,
+    KaltherComponent,
+    OstiriaComponent,
+    VergginesComponent,
+    GebietComponent,
+    TheRedMirrorsComponent,
+    ThePrisonForImmortalsComponent,
+    TheCultureComponent,
+    TheCurrencySystemComponent,
+    ThePoliticalSystemComponent,
+    TheCurseOfMerakComponent,
+    TheTanabraWorldComponent,
   ],
   imports: [
     BrowserModule,

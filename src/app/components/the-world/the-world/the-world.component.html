@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-grid-list cols="3" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let item of themesWorld"
+          ><mat-card class="example-card back-ground-img-blue">
+            <mat-card-header>
+              <mat-card-title class="font-color">{{
+                item.theme_world_title
+              }}</mat-card-title>
+            </mat-card-header>
+            <hr />
+            <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">
+              <mat-card-content class="font-color">
+                <p>{{ item.description }}</p>
+              </mat-card-content>
+            </cdk-virtual-scroll-viewport>
+            <hr />
+            <mat-card-actions class="font-color">
+              <button class="font-color" mat-button>LIKE</button>
+              <button class="font-color" mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>

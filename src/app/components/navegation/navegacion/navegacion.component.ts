@@ -13,6 +13,10 @@ export class NavegacionComponent {
   constructor() {
     this.dashboardOptions = [
       {
+        routes: '/world',
+        options: 'The World',
+      },
+      {
         routes: '/magic-system',
         options: 'Magic System',
       },

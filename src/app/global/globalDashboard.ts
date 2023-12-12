@@ -27,27 +27,5 @@ export var dashboardData = {
         },
       ],
     },
-    // {
-    //   title: 'Card number 3',
-    //   cols: 2,
-    //   rows: 1,
-    //   content: '',
-    //   image:
-    //     'assets/img/gheboren.jpeg',
-    //   array_options: [
-    //     {
-    //       routes: '/lands',
-    //       options: 'The Lands',
-    //     },
-    //     {
-    //       routes: '/mystical-places',
-    //       options: 'Mystical Places',
-    //     },
-    //     {
-    //       routes: '/world',
-    //       options: 'The World',
-    //     },
-    //   ],
-    // },
   ],
 };

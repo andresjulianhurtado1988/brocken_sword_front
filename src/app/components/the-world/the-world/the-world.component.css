@@ -1,0 +1,20 @@
+.example-card {
+  max-width: 350px;
+  height: 370px;
+}
+.back-ground-img-blue {
+  background-image: url("https://img.freepik.com/fotos-premium/fondo-arte-abstracto-colores-azul-marino-pintura-acuarela-sobre-lienzo-degradado-zafiro_113767-5463.jpg");
+  opacity: 0.9;
+  background-color: #cccccc;
+}
+.back-ground-img-blue:hover {
+  opacity: 1;
+}
+.font-color {
+  color: aliceblue;
+}
+
+.example-viewport {
+  width: 350px;
+  height: 250px;
+}

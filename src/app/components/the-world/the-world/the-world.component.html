@@ -22,8 +22,13 @@
             </cdk-virtual-scroll-viewport>
             <hr />
             <mat-card-actions class="font-color">
-              <button class="font-color" mat-button>LIKE</button>
-              <button class="font-color" mat-button>SHARE</button>
+              <button
+                class="font-color"
+                mat-button
+                (click)="choseThemeWorld(item.id)"
+              >
+                know About...
+              </button>
             </mat-card-actions>
           </mat-card>
         </mat-grid-tile>

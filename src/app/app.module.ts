@@ -58,7 +58,6 @@ import { TheLordOfTheGraveComponent } from './components/the-world/the-lord-of-t
 import { TheConflictComponent } from './components/the-world/the-conflict/the-conflict.component';
 import { TheClansComponent } from './components/the-world/the-clans/the-clans.component';
 import { TheBridgesComponent } from './components/the-world/the-bridges/the-bridges.component';
-
 import { TheEternalStormInTheSeaComponent } from './components/the-world/the-eternal-storm-in-the-sea/the-eternal-storm-in-the-sea.component';
 import { TheNaventiComponent } from './components/the-world/the-naventi/the-naventi.component';
 import { KaltherComponent } from './components/the-world/the-continents/kalther/kalther.component';
@@ -72,6 +71,9 @@ import { TheCurrencySystemComponent } from './components/the-world/the-currency-
 import { ThePoliticalSystemComponent } from './components/the-world/the-political-system/the-political-system.component';
 import { TheCurseOfMerakComponent } from './components/the-world/the-curse-of-merak/the-curse-of-merak.component';
 import { TheTanabraWorldComponent } from './components/the-world/the-tanabra-world/the-tanabra-world.component';
+import { TheContinentsComponent } from './components/the-world/the-continents/the-continents/the-continents.component';
+import { TheWorldThemesComponent } from './components/the-world/the-world-themes/the-world-themes.component';
+import { TheWorldInfoComponent } from './components/the-world/the-world-info/the-world-info.component';
 
 @NgModule({
   declarations: [
@@ -136,6 +138,9 @@ import { TheTanabraWorldComponent } from './components/the-world/the-tanabra-wor
     ThePoliticalSystemComponent,
     TheCurseOfMerakComponent,
     TheTanabraWorldComponent,
+    TheContinentsComponent,
+    TheWorldThemesComponent,
+    TheWorldInfoComponent,
   ],
   imports: [
     BrowserModule,

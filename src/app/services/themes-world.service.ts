@@ -21,10 +21,23 @@ export class ThemesWorldService {
     });
   }
 
-  // registerCreatureImage(fileCreature: any): Observable<any> {
-  //   return this._http.post(
-  //     this.url + 'creatures/registerCreatureImage',
-  //     fileCreature
-  //   );
-  // }
+  createThemeWorld(themeWorld: any): Observable<any> {
+    let json = JSON.stringify(themeWorld);
+    let params = 'json=' + json;
+
+    return this._http.post(this.url + 'themesWorld/createThemeWorld', params, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+  getThemesWorld(id: number): Observable<any> {
+    return this._http.get(this.url + 'themesWorld/getThemesWorld/'+ id, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+
+
 }

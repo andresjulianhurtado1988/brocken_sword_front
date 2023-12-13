@@ -14,7 +14,7 @@ export class NavegacionComponent {
   constructor() {
     this.dashboardOptions = [
       {
-        routes: '/world',
+        routes: '/the-world',
         options: 'The World',
       },
       {

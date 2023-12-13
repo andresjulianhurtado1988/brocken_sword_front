@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <form
+      action=""
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+      novalidate
+      autocomplete="off"
+    >
+      <div class="row">
+        <div class="col-md-6">
+          <input
+            class="form-control"
+            placeholder="Title"
+            formControlName="title"
+          />
+          <mat-error
+            *ngIf="form.controls['title']?.errors?.['required'] && form.controls['title']?.touched"
+          >
+            Is Required
+          </mat-error>
+        </div>
+        <div class="col-md-6">
+          <textarea
+            class="form-control"
+            placeholder="Description"
+            formControlName="allDescription"
+          ></textarea>
+          <mat-error
+            *ngIf="form.controls['allDescription']?.errors?.['required'] && form.controls['allDescription']?.touched"
+          >
+            Is Required
+          </mat-error>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <button
+      type="button"
+      class="btn btn-outline-success mt-3 mb-5 btn-block"
+      (click)="onSubmit()"
+      [disabled]="form.invalid"
+    >
+      <strong>Save</strong>
+    </button>
+  </div>
+  <div class="row">
+    <mat-tab-group>
+      <mat-tab *ngFor="let item of themeWorld" label="{{ item.title }}">
+        <p class="align-content-tab">
+          {{ item.allDescription }}
+        </p>
+        <br />
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

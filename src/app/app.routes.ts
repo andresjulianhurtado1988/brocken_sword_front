@@ -14,15 +14,15 @@ import { LandsInfoComponent } from './components/abouth-lands/lands-info/lands-i
 import { ChaptersComponent } from './components/the-broken-sword/abouth-chapters/chapters/chapters.component';
 import { FormIdeasComponent } from './components/story/form-ideas/form-ideas.component';
 import { CreaturesComponent } from './components/the-know-world/creatures/creatures/creatures.component';
-import { ComponentePadreComponent } from './components/componentes-prueba/componente-padre/componente-padre.component';
-import { ComponenteHijoComponent } from './components/componentes-prueba/componente-hijo/componente-hijo.component';
+import { TheWorldThemesComponent } from './components/the-world/the-world-themes/the-world-themes.component';
 
 export const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'autor', component: AboutAuthorComponent },
   { path: 'characters', component: CharactersComponent },
   { path: 'lands', component: LandsInfoComponent },
-  { path: 'world', component: TheWorldComponent },
+  { path: 'the-world', component: TheWorldComponent },
+  { path: 'the-world-themes/:id', component: TheWorldThemesComponent },
   { path: 'detail-land/id', component: LandDetailComponent },
   { path: 'detail-character/id', component: CharacterDetailComponent },
   { path: 'religion', component: ReligionComponent },
@@ -32,10 +32,6 @@ export const ROUTES: Routes = [
   { path: 'races', component: RacesComponent },
   { path: 'the-broken-sword', component: TheBrokenSwordComponent },
   { path: 'form-ideas', component: FormIdeasComponent },
-  // rutas de componentes para probar
-  { path: 'padre', component: ComponentePadreComponent },
-  { path: 'hijo', component: ComponenteHijoComponent },
-  // fin de coimponentes para probar
   { path: 'chapters/:id', component: ChaptersComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },

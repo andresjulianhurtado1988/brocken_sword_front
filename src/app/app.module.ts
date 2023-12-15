@@ -74,6 +74,8 @@ import { TheTanabraWorldComponent } from './components/the-world/the-tanabra-wor
 import { TheContinentsComponent } from './components/the-world/the-continents/the-continents/the-continents.component';
 import { TheWorldThemesComponent } from './components/the-world/the-world-themes/the-world-themes.component';
 import { TheWorldInfoComponent } from './components/the-world/the-world-info/the-world-info.component';
+import { TheWorldThemesFormComponent } from './components/the-world/the-world-themes-form/the-world-themes-form.component';
+import { TheWorldThemesFormUpdateComponent } from './components/the-world/the-world-themes-form-update/the-world-themes-form-update.component';
 
 @NgModule({
   declarations: [
@@ -141,6 +143,8 @@ import { TheWorldInfoComponent } from './components/the-world/the-world-info/the
     TheContinentsComponent,
     TheWorldThemesComponent,
     TheWorldInfoComponent,
+    TheWorldThemesFormComponent,
+    TheWorldThemesFormUpdateComponent,
   ],
   imports: [
     BrowserModule,

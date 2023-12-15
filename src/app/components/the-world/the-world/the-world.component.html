@@ -10,9 +10,15 @@
             "
           >
             <mat-card-header>
-              <mat-card-title class="font-color">{{
-                item.theme_world_title
-              }}</mat-card-title>
+              <mat-card-title class="font-color"
+                ><button
+                  class="font-color"
+                  mat-button
+                  (click)="choseThemeWorld(item.id)"
+                >
+                  {{ item.theme_world_title }}
+                </button></mat-card-title
+              >
             </mat-card-header>
             <hr />
             <cdk-virtual-scroll-viewport itemSize="1" class="example-viewport">

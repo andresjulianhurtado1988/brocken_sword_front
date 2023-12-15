@@ -71,20 +71,8 @@ export class CreaturesComponent {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.ensayo = result;
-      this.saveCreature(this.ensayo);
+      this.creatures();
     });
-  }
-
-  saveCreature(ensayo: any) {
-    this.creatureNew = {
-      creature_name: ensayo.creature_name,
-      land_id: ensayo.land,
-      description: ensayo.description,
-    };
-
-    console.log(this.creatureNew);
-    this.wolrdService.createCreature(ensayo).subscribe((resp) => {});
   }
 
   // openDialog(): void {

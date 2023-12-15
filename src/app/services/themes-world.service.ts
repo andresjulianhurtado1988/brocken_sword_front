@@ -31,13 +31,39 @@ export class ThemesWorldService {
       }),
     });
   }
+
   getThemesWorld(id: number): Observable<any> {
-    return this._http.get(this.url + 'themesWorld/getThemesWorld/'+ id, {
+    return this._http.get(this.url + 'themesWorld/getThemesWorld/' + id, {
       headers: new HttpHeaders({
         'Content-type': 'application/x-www-form-urlencoded',
       }),
     });
   }
 
+  getThemesWorldUpdate(id: number): Observable<any> {
+    return this._http.get(this.url + 'themesWorld/getThemesWorldUpdate/' + id, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
 
+  updateThemesWorld(themeWorld: any): Observable<any> {
+    let json = JSON.stringify(themeWorld);
+    let params = 'json=' + json;
+
+    return this._http.post(this.url + 'themesWorld/updateThemesWorld', params, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
+
+  deleteThemeWorld(id: number): Observable<any> {
+    return this._http.get(this.url + 'themesWorld/deleteThemeWorld/' + id, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/x-www-form-urlencoded',
+      }),
+    });
+  }
 }

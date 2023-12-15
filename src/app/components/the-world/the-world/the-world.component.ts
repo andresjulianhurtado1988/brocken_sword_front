@@ -29,7 +29,7 @@ export class TheWorldComponent {
     });
   }
 
-  choseThemeWorld(id: string) {
+  choseThemeWorld(id: number) {
     this._router.navigate(['the-world-themes/' + id]);
   }
 }

@@ -1,4 +1,15 @@
 <mat-dialog-content class="mat-typography" style="width: 500px; height: 500px">
+  <div class="row">
+    <div
+      class="alert alert-primary col-md-12"
+      style="text-align: center"
+      role="alert"
+    >
+      <span style="font-size: 12pt">
+        The Added Theme Will Be Displayed Once the Form is Saved</span
+      >
+    </div>
+  </div>
   <div class="row" style="margin-top: 10px">
     <form
       action=""
@@ -8,19 +19,17 @@
       autocomplete="off"
     >
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <input
             class="form-control"
-            placeholder="Creature Name"
-            formControlName="creature_name"
+            placeholder="Title"
+            formControlName="title"
           />
-        </div>
-        <div class="col-md-6">
-          <select class="form-control" formControlName="land_id">
-            <option *ngFor="let item of dataLand" value="{{ item.id }}">
-              {{ item.name }}
-            </option>
-          </select>
+          <mat-error
+            *ngIf="form.controls['title']?.errors?.['required'] && form.controls['title']?.touched"
+          >
+            Is Required
+          </mat-error>
         </div>
       </div>
       <hr />
@@ -29,8 +38,13 @@
           <textarea
             class="form-control tamanio-text-area"
             placeholder="Description"
-            formControlName="description"
+            formControlName="allDescription"
           ></textarea>
+          <mat-error
+            *ngIf="form.controls['allDescription']?.errors?.['required'] && form.controls['allDescription']?.touched"
+          >
+            Is Required
+          </mat-error>
         </div>
       </div>
     </form>

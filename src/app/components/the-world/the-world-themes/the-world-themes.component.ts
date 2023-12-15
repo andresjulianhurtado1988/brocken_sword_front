@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ThemesWorldService } from 'src/app/services/themes-world.service';
 import { TheWorldInfoComponent } from '../the-world-info/the-world-info.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { TheWorldThemesFormComponent } from '../the-world-themes-form/the-world-themes-form.component';
+import { MatDialog } from '@angular/material/dialog';
+import { TheWorldThemesFormUpdateComponent } from '../the-world-themes-form-update/the-world-themes-form-update.component';
 
 @Component({
   selector: 'app-the-world-themes',
@@ -12,29 +14,34 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class TheWorldThemesComponent {
   public id_theme_world: any;
-  public form: FormGroup;
-  public durationInSeconds: number = 5;
+  public theme_world: any[] = [];
   public status: string = '';
   public themeWorld: any[] = [];
-  public Ifthemes: boolean = false;
+  public Ifthemes: boolean = true;
+  public data: any;
+
+  public theme: string = '';
 
   constructor(
     public _themeWorldService: ThemesWorldService,
     private _route: ActivatedRoute,
     private _router: Router,
-    private fb: FormBuilder,
-    private _snackBar: MatSnackBar
+    public dialog: MatDialog
   ) {
-    this.form = this.fb.group({});
     this._route.params.subscribe((params) => {
       this.id_theme_world = params['id'];
     });
 
     this.getThemesWorld(this.id_theme_world);
 
-    this.form = this.fb.group({
-      allDescription: ['', [Validators.required]],
-      title: ['', [Validators.required]],
+    this._themeWorldService.getThemesWorldAll().subscribe((resp) => {
+      resp.themes_world.forEach((theme: any) => {});
+
+      let themeFilter = resp.themes_world.filter(
+        (data: any) => data.id == this.id_theme_world
+      );
+
+      this.theme = themeFilter[0]['theme_world_title'];
     });
   }
 
@@ -42,33 +49,42 @@ export class TheWorldThemesComponent {
     this._themeWorldService.getThemesWorld(id_theme_world).subscribe((data) => {
       this.themeWorld = data.themeWorld;
       if (this.themeWorld.length > 0) {
-        this.Ifthemes = true;
+        this.Ifthemes = false;
       }
     });
   }
 
-  onSubmit() {
-    this.form.value.id_img_theme_world = this.id_theme_world;
-    this._themeWorldService
-      .createThemeWorld(this.form.value)
-      .subscribe((resp) => {
-        if (resp.status == 'success') {
-          this.getThemesWorld(this.id_theme_world);
-          this.openSnackBar();
-          this.form.reset();
-        } else {
-          this.status = 'error';
-        }
-      });
-  }
+  openFormThemeWorld(id_theme_world: number) {
+    const dialogRef = this.dialog.open(TheWorldThemesFormComponent, {
+      data: {
+        id_theme_world: id_theme_world,
+      },
+    });
 
-  openSnackBar() {
-    this._snackBar.openFromComponent(TheWorldInfoComponent, {
-      duration: this.durationInSeconds * 1000,
+    dialogRef.afterClosed().subscribe((result) => {
+      this.getThemesWorld(this.id_theme_world);
     });
   }
 
   returnToThemesWorld() {
     this._router.navigate(['the-world']);
+  }
+
+  openFormThemeWorldUpdate(id_theme: number) {
+    const dialogRef = this.dialog.open(TheWorldThemesFormUpdateComponent, {
+      data: {
+        id_theme: id_theme,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.getThemesWorld(this.id_theme_world);
+    });
+  }
+
+  deleteThemeWorld(id_theme: number) {
+    this._themeWorldService.deleteThemeWorld(id_theme).subscribe((resp) => {
+      this.getThemesWorld(this.id_theme_world);
+    });
   }
 }
